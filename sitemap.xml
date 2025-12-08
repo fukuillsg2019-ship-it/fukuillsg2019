@@ -1,4 +1,10 @@
-    <style>
+<title>福井大学ラブライブ！研究会</title>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="icon.jpg">
+   <style>
     * {
        box-sizing: border-box;
     }
@@ -50,6 +56,6 @@
 <url>
   <loc>https://fukuillsg2019-ship-it.github.io/fukuillsg2019/</loc>
 </url>
-
-
 </urlset>
+    </html>
+
