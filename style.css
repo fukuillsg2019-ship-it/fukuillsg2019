@@ -235,7 +235,6 @@
     width: 100%;
     height: auto
     }
-
     #no_table {
     width: auto;
     margin-left: auto;
@@ -259,9 +258,9 @@
     }
     @media (max-width: 600px) {
     .sns-container {
-        flex-wrap: wrap;
-        max-width: 400px;
-        margin: auto;
+    flex-wrap: wrap;
+    max-width: 400px;
+    margin: auto;
     }
     .sns-item {
     width: calc(50% - 20px);
