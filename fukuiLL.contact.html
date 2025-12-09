@@ -1,109 +1,60 @@
-<title>活動場所|福井大学ラブライブ！研究会</title>
 <html lang="ja" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="icon" href="favicon.ico" sizes="any">
-    <link rel="icon" href="icon.png" type="image/png">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-     <style>
-    * {
-       box-sizing: border-box;
-    }
-    body {
-       margin: 0;
-       padding: 0;
-       font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
-       background-color: #fff;
-    }
-    header {
-       padding: 30px 4% 10px;
-       top: 0;
-       width: 100%;
-       background-color: #ff007f;
-       display: flex;
-       align-items: center;
-    }
-    h1 {
-       margin: 0; padding: 0;
-       font-size: 25px;
-    }
-    a {
-       text-decoration: none;
-       color: #fff;
-    }
-    ul {
-       list-style: none;
-       margin: 0;
-       display: flex;
-    }
-    nav {
-       margin: 0 0 0 auto;
-    }
-    li {
-       list-style: none;
-       margin: 0 0 0 15px;
-       font-size: 15px;
-    }
-   .X  {
-       border-spacing: 10px;
-       border: 0px solid #fff;
-    }
-    .resizeimage img { width: 100%; 
-    }
-            html {
-    scroll-behavior: smooth;
-    }
-    .pagetop {
-    height: 50px;
-    width: 50px;
-    position: fixed;
-    right: 30px;
-    bottom: 30px;
-    background: #fff;
-    border: solid 2px #000;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 2;
-    }
-    .pagetop__arrow {
-    height: 10px;
-    width: 10px;
-    border-top: 3px solid #000;
-    border-right: 3px solid #000;
-    transform: translateY(20%) rotate(-45deg);
-    }
-    @media (hover: hover) and (pointer: fine) {
-    .pagetop:hover, .pagetop:hover .pagetop__arrow {
-        border-color: #ff007f;
-    }}
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1><a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/"><img src="BAN2.jpg" alt="ホームへ" width="150px"><a></h1>
-      <nav class="pc-nav">
-        <ul>
-          <li><a href="fukuiLL.about.html">ABOUT<a></li>
-          <li><a href="fukuiLL.member.html">MEMBER<a></li>
-          <li><a href="fukuiLL.activity.html">ACTIVITY</a></li>
-          <li><a href="fukuiLL.introduction.html">INTRODUCTION<a></li>
-          <li><a href="fukuiLL.schedule.html">SCHEDULE<a></li>
-          <li><a href="fukuiLL.data.html">DATA・SNS</a></li>
-          <li><a href="fukuiLL.contact.html">CONTACT<a></li>
-        </ul>
-      </nav>
-    </header>
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="icon.jpg">
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="福井大学ラブライブ研究会へのご質問や見学に関するご連絡は、掲載の公式Xアカウントまで！地図で活動場所をご確認の上、お気軽にご連絡ください！">
+  <link rel="stylesheet" href="style.css" >
+  <title>活動場所・連絡先/福井大学ラブライブ！研究会・福井大学ラブライブ研究会</title>
+</head>
+<body>
+  <header class="header">
+  <h1><a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/"><img src="BAN2.jpg" alt="ホームへ" width="150px"><a></h1>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div class="hamburger__line"></div>
+      <div class="hamburger__line"></div>
+      <div class="hamburger__line"></div>
+    </div>
+    <div class="menu slide-top" id="menu">
+      <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.about.html" class="menu__item">
+        <span class="icon"><img src="miracle.png" /></span><span class="text">ABOUT</span>
+      </a>
+      <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.member.html" class="menu__item">
+        <span class="icon"><img src="noriko.png" /></span><span class="text">MEMBER</span>
+      </a>
+      <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.activity.html" class="menu__item">
+        <span class="icon"><img src="kosuzu.png" /></span><span class="text">ACTIVITY</span>
+      </a>
+      <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.introduction.html" class="menu__item">
+        <span class="icon"><img src="sayaka.png" /></span><span class="text">INTRODUCTION</span>
+      </a>
+      <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.schedule.html" class="menu__item">
+        <span class="icon"><img src="ginko.png" /></span><span class="text">SCHEDULE</span>
+      </a>
+      <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.data.html" class="menu__item">
+        <span class="icon"><img src="rurino.png" /></span><span class="text">DATA・SNS</span>
+      </a>
+      <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.contact.html" class="menu__item">
+        <span class="icon"><img src="serasu.png" /></span><span class="text">CONTACT</span>
+      </a>
+    </div>
+  </header>
     <h2 style="color:#ff007f; text-align:center; padding:20px">CONTACT</h2>
     <p class="width">
-    "<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d201.54146198279275!2d136.2139666280615!3d36.077313513211536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5ff8bf00799dbacd%3A0x53cfb319b6662f91!2z44CSOTEwLTAwMTcg56aP5LqV55yM56aP5LqV5biC5paH5Lqs77yT5LiB55uu77yZIOiqsuWklua0u-WLleWFseeUqOajnw!5e0!3m2!1sja!2sjp!4v1765000370163!5m2!1sja!2sjp" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-    <h2 style="color:#000; text-align:center; padding:20px"><font color="#000">連絡はTwitter(<a href="https://twitter.com/FukubunLLSG2019"></font><font color="#ff007f">@FukubunLLSG2019</font></a>/<a href="https://twitter.com/FukueiheiLLSG21"></font><font color="#ff007f">@FukueiheiLLSG21</font></a>)にお願いします！！</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d201.54146198279275!2d136.2139666280615!3d36.077313513211536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5ff8bf00799dbacd%3A0x53cfb319b6662f91!2z44CSOTEwLTAwMTcg56aP5LqV55yM56aP5LqV5biC5paH5Lqs77yT5LiB55uu77yZIOiqsuWklua0u-WLleWFseeUqOajnw!5e0!3m2!1sja!2sjp!4v1765000370163!5m2!1sja!2sjp" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <h2 style="color:#000; text-align:center; padding:20px"><font color="#000">部室は課外活動共用棟<br class="sp-br">3階の一番窓側<br><br>連絡は<br class="sp-br">X(旧Twitter)</font><br class="sp-br"><a href="https://twitter.com/FukubunLLSG2019"><font color="#ff007f">@FukubunLLSG2019</font></a><br class="sp-br">もしくは<br class="sp-br"><a href="https://twitter.com/FukueiheiLLSG21"></font><font color="#ff007f">@FukueiheiLLSG21</font></a><br class="sp-br">にお願いします！！</h2>
     <a class="pagetop" href="#"><div class="pagetop__arrow"></div></a>
-    <footer style="background-color:#ff007f; padding-top:20px; text-align:center">
+  <footer style="background-color:#ff007f; padding-top:20px; text-align:center">
     <p style="color:#fff">by Fukui University LL study group</p>
   </footer>
-  </body>
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      const trigger = document.querySelector('.hamburger');
+      menu.classList.toggle('open');
+      trigger.classList.toggle('open');
+    }
+  </script>
+</body>
 </html>
-
-

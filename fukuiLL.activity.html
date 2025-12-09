@@ -1,190 +1,164 @@
-<title>活動内容|福井大学ラブライブ！研究会</title>
 <html lang="ja" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="icon" href="favicon.ico" sizes="any">
-    <link rel="icon" href="icon.png" type="image/png">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-     <style>
-    * {
-       box-sizing: border-box;
-    }
-    body {
-       margin: 0;
-       padding: 0;
-       font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
-       background-color: #fff;
-    }
-    header {
-       padding: 30px 4% 10px;
-       top: 0;
-       width: 100%;
-       background-color: #ff007f;
-       display: flex;
-       align-items: center;
-    }
-    h1 {
-       margin: 0; padding: 0;
-       font-size: 25px;
-    }
-    a {
-       text-decoration: none;
-       color: #fff;
-    }
-    ul {
-       list-style: none;
-       margin: 0;
-       display: flex;
-    }
-    nav {
-       margin: 0 0 0 auto;
-    }
-    li {
-       list-style: none;
-       margin: 0 0 0 15px;
-       font-size: 15px;
-    }
-   .X  {
-       border-spacing: 10px;
-       border: 0px solid #fff;
-    }
-    .resizeimage img { width: 100%; 
-    }
-        html {
-    scroll-behavior: smooth;
-    }
-    .pagetop {
-    height: 50px;
-    width: 50px;
-    position: fixed;
-    right: 30px;
-    bottom: 30px;
-    background: #fff;
-    border: solid 2px #000;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 2;
-    }
-    .pagetop__arrow {
-    height: 10px;
-    width: 10px;
-    border-top: 3px solid #000;
-    border-right: 3px solid #000;
-    transform: translateY(20%) rotate(-45deg);
-    }
-    @media (hover: hover) and (pointer: fine) {
-    .pagetop:hover, .pagetop:hover .pagetop__arrow {
-        border-color: #ff007f;
-    }}
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1><a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/"><img src="BAN2.jpg" alt="ホームへ" width="150px"><a></h1>
-      <nav class="pc-nav">
-        <ul>
-          <li><a href="fukuiLL.about.html">ABOUT<a></li>
-          <li><a href="fukuiLL.member.html">MEMBER<a></li>
-          <li><a href="fukuiLL.activity.html">ACTIVITY</a></li>
-          <li><a href="fukuiLL.introduction.html">INTRODUCTION<a></li>
-          <li><a href="fukuiLL.schedule.html">SCHEDULE<a></li>
-          <li><a href="fukuiLL.data.html">DATA・SNS</a></li>
-          <li><a href="fukuiLL.contact.html">CONTACT<a></li>
-        </ul>
-      </nav>
-    </header>
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="icon.jpg">
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="アニメ鑑賞からライブ遠征、聖地巡礼、学園祭出店、さらにはカッターレースやリレーマラソンまで！？福井のラブライバーたちが繰り広げる、熱狂的で多彩な活動内容をご紹介！">
+  <link rel="stylesheet" href="style.css" >
+  <title>活動内容/福井大学ラブライブ！研究会・福井大学ラブライブ研究会</title>
+</head>
+<body>
+  <header class="header">
+  <h1><a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/"><img src="BAN2.jpg" alt="ホームへ" width="150px"><a></h1>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div class="hamburger__line"></div>
+      <div class="hamburger__line"></div>
+      <div class="hamburger__line"></div>
+    </div>
+    <div class="menu slide-top" id="menu">
+      <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.about.html" class="menu__item">
+        <span class="icon"><img src="miracle.png" /></span><span class="text">ABOUT</span>
+      </a>
+      <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.member.html" class="menu__item">
+        <span class="icon"><img src="noriko.png" /></span><span class="text">MEMBER</span>
+      </a>
+      <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.activity.html" class="menu__item">
+        <span class="icon"><img src="kosuzu.png" /></span><span class="text">ACTIVITY</span>
+      </a>
+      <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.introduction.html" class="menu__item">
+        <span class="icon"><img src="sayaka.png" /></span><span class="text">INTRODUCTION</span>
+      </a>
+      <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.schedule.html" class="menu__item">
+        <span class="icon"><img src="ginko.png" /></span><span class="text">SCHEDULE</span>
+      </a>
+      <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.data.html" class="menu__item">
+        <span class="icon"><img src="rurino.png" /></span><span class="text">DATA・SNS</span>
+      </a>
+      <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.contact.html" class="menu__item">
+        <span class="icon"><img src="serasu.png" /></span><span class="text">CONTACT</span>
+      </a>
+    </div>
+  </header>
     <div style="background-color:#fff; padding:20px">
       <h2 style="text-align:center"><span style="color:#ff007f">ACTIVITY</span></h2>  
     </div>
     <div style="background-color:#ff007f; padding:20px">
       <h2 style="text-align:center"><span style="color:#fff">アニメ鑑賞</span></h2>
     </div>
-       <table class="X"; align="center"> 
-        <tr>
-         <td><img src="anime1.jpg" alt="アニメ鑑賞１" width="240" height="180"></td>
-         <td><img src="anime2.jpg" alt="アニメ鑑賞２" width="240" height="180"></td>
-        </tr>
-       </table>
+    <div class="container">
+    <div class="photo-item">
+        <img src="anime1.jpg" alt="アニメ鑑賞１">
+    </div>
+    <div class="photo-item">
+        <img src="anime2.jpg" alt="アニメ鑑賞２">
+    </div>
+    </div>
         <font color="#000">
-        <h2 style="text-align:center">「一人で見るより、みんなで語る。あの一瞬の感動を共有しませんか？」</h2>
-        <p style="text-align:center">ラブライブ！シリーズのアニメを鑑賞します<br>共用講義棟で一緒に視聴し、放送直後の興奮をそのまま部員同士で語り合えるのが最大の魅力です<br>自分一人では出会わなかったような素敵な作品に巡り合えるチャンスもたくさんあります！</p>
+        <h2 style="text-align:center">一人で見るより、みんなで語る。<br class="sp-br">あの一瞬の感動を共有しませんか？</h2>
+        <p style="text-align:center">ラブライブ！シリーズのアニメを鑑賞します<br>共用講義棟で一緒に視聴し、<br class="sp-br">放送直後の興奮をそのまま部員同士で語り合えるのが<br class="sp-br">最大の魅力です<br>自分一人では出会わなかったような素敵な作品に<br class="sp-br">巡り合えるチャンスもたくさんあります！</p>
         </font>
     <div style="background-color:#00bfff; padding:20px">
       <h2 style="text-align:center"><span style="color:#fff">ライブ参戦</span></h2>
     </div>
-       <table class="X"; align="center"> 
-        <tr>
-         <td><img src="ライブ1.jpg" alt="Live１" width="240" height="180"></td>
-         <td><img src="ライブ2.jpg" alt="Live２" width="240" height="180"></td>
-         <td><img src="ライブ3.jpg" alt="Live３" width="240" height="180"></td>
-        </tr>
-       </table>
+    <div class="container">
+    <div class="photo-item">
+        <img src="ライブ1.jpg" alt="Live１">
+    </div>
+    <div class="photo-item">
+        <img src="ライブ2.jpg" alt="Live２">
+    </div>
+    <div class="photo-item">
+        <img src="ライブ3.jpg" alt="Live３">
+    </div>
+    </div>
         <font color="#000">
-        <h2 style="text-align:center">「推しの輝きを全身で浴びる、最高の体験を。」</h2>
-        <p style="text-align:center">ラブライブ！シリーズのライブ開催に合わせて、大阪や愛知、東京や神奈川、埼玉などの会場へ遠征します<br>ブレードの光に包まれた会場で、キャストと一体になって盛り上がる体験は一生の思い出<br>チケット確保から当日の参戦まで、仲間と協力して「推し」のステージを全力で応援します！</p>
+        <h2 style="text-align:center">推しの輝きを全身で浴びる、<br class="sp-br">最高の体験を。</h2>
+        <p style="text-align:center">ラブライブ！シリーズのライブ開催に合わせて、<br class="sp-br">大阪や愛知、東京や神奈川、埼玉などの会場へ遠征します<br>ブレードの光に包まれた会場で、<br class="sp-br">キャストと一体になって盛り上がる体験は一生の思い出！<br>チケット確保から当日の参戦まで<br class="sp-br">仲間と協力して「推し」のステージを全力で応援します！</p>
         </font>
     <div style="background-color:#ffcc00; padding:20px">
       <h2 style="text-align:center"><span style="color:#fff">聖地巡礼</span></h2>
     </div>
-       <table class="X"; align="center"> 
-        <tr>
-         <td><img src="聖地巡礼1.jpg" alt="Seichi１" width="240" height="180"></td>
-         <td><img src="聖地巡礼2.jpg" alt="seichi２" width="240" height="180"></td>
-         <td><img src="聖地巡礼3.jpg" alt="seichi３" width="240" height="180"></td>
-        </tr>
-       </table>
+    <div class="container">
+    <div class="photo-item">
+        <img src="聖地巡礼1.jpg" alt="Seichi１">
+    </div>
+    <div class="photo-item">
+        <img src="聖地巡礼2.jpg" alt="seichi２">
+    </div>
+    <div class="photo-item">
+        <img src="聖地巡礼3.jpg" alt="seichi３">
+    </div>
+    </div>
         <font color="#000">
-        <h2 style="text-align:center">「物語の足跡を辿る、彼女たちの日常を。」</h2>
-        <p style="text-align:center">秋葉原、沼津、お台場、渋谷・原宿・牛久、金沢など、作品の舞台となった場所を訪れます<br>劇中のシーンの場所へ赴き、写真を撮ったり、キャラクターが食べたグルメを味わったりと、作品の世界を五感で体験します<br>福井から遠征して辿り着いた瞬間の感動を分かち合いましょう！</p>
+        <h2 style="text-align:center">物語の足跡を辿る、<br class="sp-br">彼女たちの日常を。</h2>
+        <p style="text-align:center">秋葉原、沼津、お台場、渋谷・原宿・牛久、金沢など、<br class="sp-br">作品の舞台となった場所を訪れます<br>劇中のシーンの場所へ赴き、<br class="sp-br">写真を撮ったり、<br class="sp-br">キャラクターが食べたグルメを味わったりと、<br class="sp-br">作品の世界を五感で体験します<br>福井から遠征して辿り着いた瞬間の感動を<br class="sp-br">分かち合いましょう！</p>
         </font>
     <div style="background-color:#cc99ff; padding:20px">
       <h2 style="text-align:center"><span style="color:#fff">アニクラ(福パラ)</span></h2>
     </div>
-       <table class="X"; align="center"> 
-        <tr>
-         <td><img src="福パラ1.jpg" alt="fukupara１" width="240" height="180"></td>
-         <td><img src="福パラ2.jpg" alt="fukupara２" width="240" height="180"></td>
-         <td><img src="福パラ3.jpg" alt="fukupara３" width="240" height="180"></td>
-        </tr>
-       </table>
+    <div class="container">
+    <div class="photo-item">
+        <img src="福パラ1.jpg" alt="fukupara１">
+    </div>
+    <div class="photo-item">
+        <img src="福パラ2.jpg" alt="fukupara２">
+    </div>
+    <div class="photo-item">
+        <img src="福パラ3.jpg" alt="fukupara３">
+    </div>
+    </div>
         <font color="#000">
-        <h2 style="text-align:center">「福井をアニソンで染める。現場の熱狂をその身で感じろ！」</h2>
-        <p style="text-align:center">福井で開催されている県内最大級のアニソンDJイベント、福井アニソンパラディズム、通称「福パラ」<br>毎年9月の3連休の土曜日に行われることが多く<br>この現場に積極的に参戦しています！<br>知ってるアニソンで盛り上がりましょう！</p>
+        <h2 style="text-align:center">福井をアニソンで染める。<br class="sp-br">現場の熱狂をその身で感じろ！</h2>
+        <p style="text-align:center">福井で開催されている県内最大級のアニソンDJイベント<br class="sp-br">福井アニソンパラディズム、通称「福パラ」<br>毎年9月の3連休の土曜日に行われることが多く<br>この現場に積極的に参戦しています！<br>知ってるアニソンで盛り上がりましょう！</p>
         </font>
     <div style="background-color:#ffc0bc; padding:20px">
       <h2 style="text-align:center"><span style="color:#b5002c">越祭出店</span></h2>
     </div>
-       <table class="X"; align="center"> 
-        <tr>
-         <td><img src="学祭1.jpg" alt="gakusai１" width="240" height="180"></td>
-         <td><img src="学祭2.jpg" alt="gakusai２" width="240" height="180"></td>
-         <td><img src="学祭3.jpg" alt="gakusai３" width="240" height="180"></td>
-        </tr>
-       </table>
+    <div class="container">
+    <div class="photo-item">
+        <img src="学祭1.jpg" alt="gakusai１">
+    </div>    
+    <div class="photo-item">
+        <img src="学祭2.jpg" alt="gakusai２">
+    </div>
+    <div class="photo-item">
+        <img src="学祭3.jpg" alt="gakusai３">
+    </div>
+    </div>
         <font color="#000">
-        <h2 style="text-align:center">「情熱とスタミナをチャージ！『旨い』を届けます！」</h2>
-        <p style="text-align:center">年に一度のビッグイベント、学園祭である越祭<br>ラブライブ！研究会は模擬店を出店して参戦！<br>学生や来られた方々の胃袋と心を満たす、絶品グルメを提供します！</p>
+        <h2 style="text-align:center">情熱とスタミナをチャージ！<br class="sp-br">『旨い』を届けます！</h2>
+        <p style="text-align:center">年に一度のビッグイベント、学園祭である越祭<br>ラブライブ！研究会は模擬店を出店して参戦！<br>学生や来られた方々の胃袋と心を満たす、<br class="sp-br">絶品グルメを提供します！</p>
         </font>
     <div style="background-color:#008bc2; padding:20px">
       <h2 style="text-align:center"><span style="color:#fff">カッターレース・リレーマラソン</span></h2> 
     </div>
-       <table class="X"; align="center"> 
-        <tr>
-         <td><img src="敦賀カッターレース1.jpg" alt="katta-re-su1" width="240" height="180"></td>
-         <td><img src="敦賀カッターレース2.jpg" alt="katta-re-su2" width="240" height="180"></td>
-         <td><img src="リレーマラソン1.jpg" alt="rire-marason" width="240" height="180"></td>
-        </tr>
-       </table>
+    <div class="container">
+    <div class="photo-item">
+        <img src="敦賀カッターレース1.jpg" alt="katta-re-su1">
+    </div>    
+    <div class="photo-item">
+        <img src="敦賀カッターレース2.jpg" alt="katta-re-su2">
+    </div>
+    <div class="photo-item">
+        <img src="リレーマラソン1.jpg" alt="rire-marason">
+    </div>
+    </div>
         <font color="#000">
-        <h2 style="text-align:center">「限界を超えて漕ぎ出せ、走り抜け！ラ研、魂の体育会系参戦！」</h2>
-        <p style="text-align:center">ラブライブ！への愛は、体力づくりから！？<br>ラブライブ！研究会は敦賀のカッターレースや長良川のリレーマラソンにも全力で参戦し<br>チームの絆を深めています！</p>
+        <h2 style="text-align:center">限界を超えて漕ぎ出せ、走り抜け！<br class="sp-br">ラ研、魂の体育会系参戦！</h2>
+        <p style="text-align:center">ラブライブ！への愛は、体力づくりから！？<br>ラブライブ！研究会は敦賀のカッターレースや<br class="sp-br">長良川のリレーマラソンにも全力で参戦し<br>チームの絆を深めています！</p>
         </font>
-      <a class="pagetop" href="#"><div class="pagetop__arrow"></div></a>
+    <a class="pagetop" href="#"><div class="pagetop__arrow"></div></a>
   <footer style="background-color:#ff007f; padding-top:20px; text-align:center">
     <p style="color:#fff">by Fukui University LL study group</p>
   </footer>
- </body>
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      const trigger = document.querySelector('.hamburger');
+      menu.classList.toggle('open');
+      trigger.classList.toggle('open');
+    }
+  </script>
+</body>
 </html>
-
