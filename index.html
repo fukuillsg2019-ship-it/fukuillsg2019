@@ -1,119 +1,64 @@
-<title>福井大学ラブライブ！研究会</title>
 <html lang="ja" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="icon" href="favicon.ico" sizes="any">
-    <link rel="icon" href="icon.png" type="image/png">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-     <style>
-    * {
-       box-sizing: border-box;
-    }
-    body {
-       margin: 0;
-       padding: 0;
-       font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
-       background-color: #fff;
-    }
-    header {
-       padding: 30px 4% 10px;
-       top: 0;
-       width: 100%;
-       background-color: #ff007f;
-       display: flex;
-       align-items: center;
-    }
-    h1 {
-       margin: 0; padding: 0;
-       font-size: 25px;
-    }
-    a {
-       text-decoration: none;
-       color: #fff;
-    }
-    ul {
-       list-style: none;
-       margin: 0;
-       display: flex;
-    }
-    nav {
-       margin: 0 0 0 auto;
-    }
-    li {
-       list-style: none;
-       margin: 0 0 0 15px;
-       font-size: 15px;
-    }
-   .X  {
-       border-spacing: 10px;
-       border: 0px solid #fff;
-    }
-    .resizeimage img { width: 100%;      
-    }
-        html {
-    scroll-behavior: smooth;
-    }
-    .pagetop {
-    height: 50px;
-    width: 50px;
-    position: fixed;
-    right: 30px;
-    bottom: 30px;
-    background: #fff;
-    border: solid 2px #000;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 2;
-    }
-    .pagetop__arrow {
-    height: 10px;
-    width: 10px;
-    border-top: 3px solid #000;
-    border-right: 3px solid #000;
-    transform: translateY(20%) rotate(-45deg);
-    }
-    @media (hover: hover) and (pointer: fine) {
-    .pagetop:hover, .pagetop:hover .pagetop__arrow {
-        border-color: #ff007f;
-    }}
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1><a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/"><img src="BAN2.jpg" alt="ホームへ" width="150px"><a></h1>
-      <nav class="pc-nav">
-        <ul>
-          <li><a href="fukuiLL.about.html">ABOUT<a></li>
-          <li><a href="fukuiLL.member.html">MEMBER<a></li>
-          <li><a href="fukuiLL.activity.html">ACTIVITY</a></li>
-          <li><a href="fukuiLL.introduction.html">INTRODUCTION<a></li>
-          <li><a href="fukuiLL.schedule.html">SCHEDULE<a></li>
-          <li><a href="fukuiLL.data.html">DATA・SNS</a></li>
-          <li><a href="fukuiLL.contact.html">CONTACT<a></li>
-        </ul>
-      </nav>
-    </header>
-      <div style="background-color:#fff; padding:20px">
-        <h2 style="text-align:center"><span style="color:#ff007f">福井大学ラブライブ！研究会</span></h2>  
-      </div>
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="icon.jpg">
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="福井大学ラブライブ研究会の公式サイトです！μ'sからイキヅライブまで、ライブ参戦や聖地巡礼、アニクラなど幅広く活動中！SNSや活動記録を通して、サークルのリアルな活動風景をお届けします。新入部員や兼部も大歓迎！福大のラブライバーはぜひ記事をチェックしてみてください！">
+  <link rel="stylesheet" href="style.css" >
+  <title>福井大学ラブライブ！研究会・福井大学ラブライブ研究会</title>
+</head>
+<body>
+  <header class="header">
+  <h1><a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/"><img src="BAN2.jpg" alt="ホームへ" width="150px"><a></h1>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div class="hamburger__line"></div>
+      <div class="hamburger__line"></div>
+      <div class="hamburger__line"></div>
+    </div>
+    <div class="menu slide-top" id="menu">
+      <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.about.html" class="menu__item">
+        <span class="icon"><img src="miracle.png" /></span><span class="text">ABOUT</span>
+      </a>
+      <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.member.html" class="menu__item">
+        <span class="icon"><img src="noriko.png" /></span><span class="text">MEMBER</span>
+      </a>
+      <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.activity.html" class="menu__item">
+        <span class="icon"><img src="kosuzu.png" /></span><span class="text">ACTIVITY</span>
+      </a>
+      <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.introduction.html" class="menu__item">
+        <span class="icon"><img src="sayaka.png" /></span><span class="text">INTRODUCTION</span>
+      </a>
+      <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.schedule.html" class="menu__item">
+        <span class="icon"><img src="ginko.png" /></span><span class="text">SCHEDULE</span>
+      </a>
+      <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.data.html" class="menu__item">
+        <span class="icon"><img src="rurino.png" /></span><span class="text">DATA・SNS</span>
+      </a>
+      <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.contact.html" class="menu__item">
+        <span class="icon"><img src="serasu.png" /></span><span class="text">CONTACT</span>
+      </a>
+    </div>
+  </header>
+    <div style="background-color:#fff; padding:20px">
+      <h2 style="text-align:center"><span style="color:#ff007f">福井大学ラブライブ！研究会</span></h2>  
+    </div>
     <p class="resizeimage">
       <img src="BAN1.jpg" alt="ニジガクのみんな" >
     </p>
-        <h4 style="text-align:right"><span style="color:#000">Drew by ばん様(<a href="https://twitter.com/One_ban7241"><font color="#ff007f">@One_ban7241</font></a>)</span></h4>
+      <h4 style="text-align:right"><span style="color:#000">Drew by ばん様(<a href="https://twitter.com/One_ban7241"><font color="#ff007f">@One_ban7241</font></a>)</span></h4>
     <div style="background-color:#3399ff; padding:20px">
-     <h2 style="text-align:center"><span style="color:#fff">毎週金曜日に文京キャンパスで<br>自由気ままに活動中<br>ゲームをやったり、課題をやったり、各々色んなことをやってます！</h2>
+      <h2 style="text-align:center"><span style="color:#fff">毎週金曜日に文京キャンパスで<br>自由気ままに活動中<br>ゲームをやったり、<br class="sp-br">課題をやったり、<br class="sp-br">各々色んなことをやってます！</h2>
     </div>
     <div style="background-color:#ffcc00; padding:20px">
      <h2 style="text-align:center"><span style="color:#fff">新入部員歓迎中！<br>新一年生も<br>違う学年も<br>大募集！</h2>
     </div>
     <div style="background-color:#cc99ff; padding:20px; text-align:center">
      <h2 style="text-align:center"><span style="color:#fff">活動内容</h2>
-     <h3 style="text-align:center"><span style="color:#fff">アニメ鑑賞はもちろん！<br>ライブ鑑賞・参戦！！<br>カラオケやアニクラで大盛り上がり！<br>学園祭では出店を出したり！<br>時には敦賀のカッターレースや長良川のリレーマラソンまで！？</h3></div>
+     <h3 style="text-align:center"><span style="color:#fff">アニメ鑑賞はもちろん！<br>ライブ鑑賞・参戦！！<br>カラオケやアニクラで大盛り上がり！<br>学園祭では出店を出したり！<br>時には敦賀のカッターレースや<br class="sp-br">長良川のリレーマラソンまで！？</h3></div>
     <div style="background-color:#ffc0cb; padding:20px; text-align:center">
      <h2 style="text-align:center"><span style="color:#b5002c">福井でのラブライバーが受ける恩恵</h2>
-     <h3 style="text-align:center"><span style="color:#b5002c">福井は『蓮ノ空女学院スクールアイドルクラブ』の聖地である石川県・金沢に車で1時間程度で行くことができ<br>気軽に聖地巡礼が可能！<br>さらに、蓮ノ空女学院のDOLLCHESTRAの徒町小鈴は福井県敦賀市出身！<br>さらにさらに！新シリーズの『イキヅライブ！』では福井サテライトが誕生！<br>金澤奇跡と調布のりこが所属していており、福井自体が聖地に！</h3></div>
+     <h3 style="text-align:center"><span style="color:#b5002c">福井は<br class="sp-br">『蓮ノ空女学院スクールアイドルクラブ』<br class="sp-br">の聖地である石川県・金沢に<br class="sp-br">車で1時間程度で行くことができ<br>気軽に聖地巡礼が可能！<br>さらに、蓮ノ空女学院のDOLLCHESTRAの<br class="sp-br">徒町小鈴は福井県敦賀市出身！<br>さらにさらに！<br class="sp-br">新シリーズの『イキヅライブ！』では<br class="sp-br">福井サテライトが誕生！<br>金澤奇跡と調布のりこが所属していており、<br class="sp-br">福井自体が聖地に！</h3></div>
     </div>
     <div style="background-color:#008bc2; padding:20px; text-align:center">
       <h2 style="text-align:center"><span style="color:#fff">SNS</h2>
@@ -131,9 +76,16 @@
       </table>
     </div>
     <a class="pagetop" href="#"><div class="pagetop__arrow"></div></a>
-    <footer style="background-color:#ff007f; padding-top:20px; text-align:center">
+  <footer style="background-color:#ff007f; padding-top:20px; text-align:center">
     <p style="color:#fff">by Fukui University LL study group</p>
-    </footer>
- </body>
+  </footer>
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      const trigger = document.querySelector('.hamburger');
+      menu.classList.toggle('open');
+      trigger.classList.toggle('open');
+    }
+  </script>
+</body>
 </html>
-
