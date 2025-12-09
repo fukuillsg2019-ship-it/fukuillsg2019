@@ -5,7 +5,7 @@
   <link rel="apple-touch-icon" href="icon.jpg">
   <meta name="viewport" content="width=device-width">
   <meta name="description" content="ライブ、ファンミ、キャラや声優さんの誕生日など、ラブライブ！関連の重要日程を一目でチェック！福井大学ラブライブ研究会の最新活動スケジュールも公開中！">
-  <link rel="stylesheet" href="style.css" >
+  <link rel="stylesheet" href="style.css">
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-T5KJ0R45RT"></script>
 <script>
@@ -26,20 +26,23 @@
       <div class="hamburger__line"></div>
     </div>
     <div class="menu slide-top" id="menu">
+      <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/" class="menu__item">
+        <span class="icon"><img src="miracle.png" /></span><span class="text">HOME</span>
+      </a>
       <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.about.html" class="menu__item">
-        <span class="icon"><img src="miracle.png" /></span><span class="text">ABOUT</span>
+         <span class="icon"><img src="noriko.png" /></span><span class="text">ABOUT</span>
       </a>
       <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.member.html" class="menu__item">
-        <span class="icon"><img src="noriko.png" /></span><span class="text">MEMBER</span>
+        <span class="icon"><img src="kosuzu.png" /></span><span class="text">MEMBER</span>
       </a>
       <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.activity.html" class="menu__item">
-        <span class="icon"><img src="kosuzu.png" /></span><span class="text">ACTIVITY</span>
+        <span class="icon"><img src="sayaka.png" /></span><span class="text">ACTIVITY</span>
       </a>
       <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.introduction.html" class="menu__item">
-        <span class="icon"><img src="sayaka.png" /></span><span class="text">INTRODUCTION</span>
+        <span class="icon"><img src="ginko.png" /></span><span class="text">INTRODUCTION</span>
       </a>
       <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.schedule.html" class="menu__item">
-        <span class="icon"><img src="ginko.png" /></span><span class="text">SCHEDULE</span>
+        <span class="icon"><img src="megumi.png" /></span><span class="text">SCHEDULE</span>
       </a>
       <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.data.html" class="menu__item">
         <span class="icon"><img src="rurino.png" /></span><span class="text">DATA・SNS</span>
@@ -49,21 +52,73 @@
       </a>
     </div>
   </header>
+  <div class="slideContsR
+    slideConts">  
    <h2 style="text-align:center; padding:20px"><font color="#ff007f">SCHEDULE</font></h2>
+  </div>
+   <div class="fadeConts">
    <h3  class="googleCalendar">
     <iframe src="https://calendar.google.com/calendar/embed?src=fukuillsg2019%40gmail.com&ctz=Asia%2FTokyo" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
    </h3>
+   </div>
     <a class="pagetop" href="#"><div class="pagetop__arrow"></div></a>
   <footer style="background-color:#ff007f; padding-top:20px; text-align:center">
     <p style="color:#fff">by Fukui University LL study group</p>
   </footer>
-  <script>
+    <script>
     function toggleMenu() {
       const menu = document.getElementById('menu');
       const trigger = document.querySelector('.hamburger');
       menu.classList.toggle('open');
       trigger.classList.toggle('open');
     }
-  </script>
-</body>
-</html>
+    var slideConts = document.querySelectorAll('.slideConts'); 
+    var slideContsRect = []; 
+    var slideContsTop = []; 
+    var windowY = window.pageYOffset; 
+    var windowH = window.innerHeight; 
+    var remainder = 100; 
+    for (var i = 0; i < slideConts.length; i++) {
+    slideContsRect.push(slideConts[i].getBoundingClientRect());
+    }
+    for (var i = 0; i < slideContsRect.length; i++) {
+    slideContsTop.push(slideContsRect[i].top + windowY);
+    }
+    window.addEventListener('resize', function () {
+    windowH = window.innerHeight;
+    });
+    window.addEventListener('scroll', function () {
+    windowY = window.pageYOffset;
+    for (var i = 0; i < slideConts.length; i++) {
+    if(windowY > slideContsTop[i] - windowH + remainder) {
+      slideConts[i].classList.add('show');
+    } else {
+      slideConts[i].classList.remove('show');
+    }
+    }});
+    var fadeConts = document.querySelectorAll('.fadeConts');
+    var fadeContsRect = [];
+    var fadeContsTop = [];
+    var windowY = window.pageYOffset;
+    var windowH = window.innerHeight;
+    var remainder = 100; 
+    for (var i = 0; i < fadeConts.length; i++) {
+    fadeContsRect.push(fadeConts[i].getBoundingClientRect());
+    }
+    for (var i = 0; i < fadeContsRect.length; i++) {
+    fadeContsTop.push(fadeContsRect[i].top + windowY);
+    }
+    window.addEventListener('resize', function () {
+    windowH = window.innerHeight;
+    });
+    window.addEventListener('scroll', function () {
+    windowY = window.pageYOffset;
+    for (var i = 0; i < fadeConts.length; i++) {
+    if(windowY > fadeContsTop[i] - windowH + remainder) {
+      fadeConts[i].classList.add('show');
+    } else {
+      fadeConts[i].classList.remove('show');
+    }}});
+    </script>
+    </body>
+    </html>

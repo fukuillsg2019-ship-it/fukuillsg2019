@@ -5,7 +5,7 @@
   <link rel="apple-touch-icon" href="icon.jpg">
   <meta name="viewport" content="width=device-width">
   <meta name="description" content="福井大学ラブライブ研究会へのご質問や見学に関するご連絡は、掲載の公式Xアカウントまで！地図で活動場所をご確認の上、お気軽にご連絡ください！">
-  <link rel="stylesheet" href="style.css" >
+  <link rel="stylesheet" href="style.css">
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-T5KJ0R45RT"></script>
 <script>
@@ -26,20 +26,23 @@
       <div class="hamburger__line"></div>
     </div>
     <div class="menu slide-top" id="menu">
+      <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/" class="menu__item">
+        <span class="icon"><img src="miracle.png" /></span><span class="text">HOME</span>
+      </a>
       <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.about.html" class="menu__item">
-        <span class="icon"><img src="miracle.png" /></span><span class="text">ABOUT</span>
+         <span class="icon"><img src="noriko.png" /></span><span class="text">ABOUT</span>
       </a>
       <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.member.html" class="menu__item">
-        <span class="icon"><img src="noriko.png" /></span><span class="text">MEMBER</span>
+        <span class="icon"><img src="kosuzu.png" /></span><span class="text">MEMBER</span>
       </a>
       <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.activity.html" class="menu__item">
-        <span class="icon"><img src="kosuzu.png" /></span><span class="text">ACTIVITY</span>
+        <span class="icon"><img src="sayaka.png" /></span><span class="text">ACTIVITY</span>
       </a>
       <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.introduction.html" class="menu__item">
-        <span class="icon"><img src="sayaka.png" /></span><span class="text">INTRODUCTION</span>
+        <span class="icon"><img src="ginko.png" /></span><span class="text">INTRODUCTION</span>
       </a>
       <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.schedule.html" class="menu__item">
-        <span class="icon"><img src="ginko.png" /></span><span class="text">SCHEDULE</span>
+        <span class="icon"><img src="megumi.png" /></span><span class="text">SCHEDULE</span>
       </a>
       <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.data.html" class="menu__item">
         <span class="icon"><img src="rurino.png" /></span><span class="text">DATA・SNS</span>
@@ -49,21 +52,75 @@
       </a>
     </div>
   </header>
+  <div class="slideContsR
+    slideConts"> 
     <h2 style="color:#ff007f; text-align:center; padding:20px">CONTACT</h2>
+  </div>
+    <div class="fadeConts">
     <p class="width">
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d201.54146198279275!2d136.2139666280615!3d36.077313513211536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5ff8bf00799dbacd%3A0x53cfb319b6662f91!2z44CSOTEwLTAwMTcg56aP5LqV55yM56aP5LqV5biC5paH5Lqs77yT5LiB55uu77yZIOiqsuWklua0u-WLleWFseeUqOajnw!5e0!3m2!1sja!2sjp!4v1765000370163!5m2!1sja!2sjp" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </p></div>
+    <div class="fadeConts">
     <h2 style="color:#000; text-align:center; padding:20px"><font color="#000">部室は課外活動共用棟<br class="sp-br">3階の一番窓側<br><br>連絡は<br class="sp-br">X(旧Twitter)</font><br class="sp-br"><a href="https://twitter.com/FukubunLLSG2019"><font color="#ff007f">@FukubunLLSG2019</font></a><br class="sp-br">もしくは<br class="sp-br"><a href="https://twitter.com/FukueiheiLLSG21"></font><font color="#ff007f">@FukueiheiLLSG21</font></a><br class="sp-br">にお願いします！！</h2>
+    </div>
     <a class="pagetop" href="#"><div class="pagetop__arrow"></div></a>
   <footer style="background-color:#ff007f; padding-top:20px; text-align:center">
     <p style="color:#fff">by Fukui University LL study group</p>
   </footer>
-  <script>
+    <script>
     function toggleMenu() {
       const menu = document.getElementById('menu');
       const trigger = document.querySelector('.hamburger');
       menu.classList.toggle('open');
       trigger.classList.toggle('open');
     }
-  </script>
-</body>
-</html>
+    var slideConts = document.querySelectorAll('.slideConts'); 
+    var slideContsRect = []; 
+    var slideContsTop = []; 
+    var windowY = window.pageYOffset; 
+    var windowH = window.innerHeight; 
+    var remainder = 100; 
+    for (var i = 0; i < slideConts.length; i++) {
+    slideContsRect.push(slideConts[i].getBoundingClientRect());
+    }
+    for (var i = 0; i < slideContsRect.length; i++) {
+    slideContsTop.push(slideContsRect[i].top + windowY);
+    }
+    window.addEventListener('resize', function () {
+    windowH = window.innerHeight;
+    });
+    window.addEventListener('scroll', function () {
+    windowY = window.pageYOffset;
+    for (var i = 0; i < slideConts.length; i++) {
+    if(windowY > slideContsTop[i] - windowH + remainder) {
+      slideConts[i].classList.add('show');
+    } else {
+      slideConts[i].classList.remove('show');
+    }
+    }});
+    var fadeConts = document.querySelectorAll('.fadeConts');
+    var fadeContsRect = [];
+    var fadeContsTop = [];
+    var windowY = window.pageYOffset;
+    var windowH = window.innerHeight;
+    var remainder = 100; 
+    for (var i = 0; i < fadeConts.length; i++) {
+    fadeContsRect.push(fadeConts[i].getBoundingClientRect());
+    }
+    for (var i = 0; i < fadeContsRect.length; i++) {
+    fadeContsTop.push(fadeContsRect[i].top + windowY);
+    }
+    window.addEventListener('resize', function () {
+    windowH = window.innerHeight;
+    });
+    window.addEventListener('scroll', function () {
+    windowY = window.pageYOffset;
+    for (var i = 0; i < fadeConts.length; i++) {
+    if(windowY > fadeContsTop[i] - windowH + remainder) {
+      fadeConts[i].classList.add('show');
+    } else {
+      fadeConts[i].classList.remove('show');
+    }}});
+    </script>
+    </body>
+    </html>
