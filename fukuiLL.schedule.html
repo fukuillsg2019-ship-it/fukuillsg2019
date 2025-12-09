@@ -1,116 +1,60 @@
-<title>予定|福井大学ラブライブ！研究会</title>
 <html lang="ja" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="icon" href="favicon.ico" sizes="any">
-    <link rel="icon" href="icon.png" type="image/png">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-     <style>
-    * {
-       box-sizing: border-box;
-    }
-    body {
-       margin: 0;
-       padding: 0;
-       font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
-       background-color: #fff;
-    }
-    header {
-       padding: 30px 4% 10px;
-       top: 0;
-       width: 100%;
-       background-color: #ff007f;
-       display: flex;
-       align-items: center;
-    }
-    h1 {
-       margin: 0; padding: 0;
-       font-size: 25px;
-    }
-    a {
-       text-decoration: none;
-       color: #fff;
-    }
-    ul {
-       list-style: none;
-       margin: 0;
-       display: flex;
-    }
-    nav {
-       margin: 0 0 0 auto;
-    }
-    li {
-       list-style: none;
-       margin: 0 0 0 15px;
-       font-size: 15px;
-    }
-   .X  {
-       border-spacing: 10px;
-       border: 0px solid #fff;
-    }
-    .resizeimage img { width: 100%; 
-    }
-            html {
-    scroll-behavior: smooth;
-    }
-    .pagetop {
-    height: 50px;
-    width: 50px;
-    position: fixed;
-    right: 30px;
-    bottom: 30px;
-    background: #fff;
-    border: solid 2px #000;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 2;
-    }
-    .pagetop__arrow {
-    height: 10px;
-    width: 10px;
-    border-top: 3px solid #000;
-    border-right: 3px solid #000;
-    transform: translateY(20%) rotate(-45deg);
-    }
-    @media (hover: hover) and (pointer: fine) {
-    .pagetop:hover, .pagetop:hover .pagetop__arrow {
-        border-color: #ff007f;
-    }}
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1><a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/"><img src="BAN2.jpg" alt="ホームへ" width="150px"><a></h1>
-      <nav class="pc-nav">
-        <ul>
-          <li><a href="fukuiLL.about.html">ABOUT<a></li>
-          <li><a href="fukuiLL.member.html">MEMBER<a></li>
-          <li><a href="fukuiLL.activity.html">ACTIVITY</a></li>
-          <li><a href="fukuiLL.introduction.html">INTRODUCTION<a></li>
-          <li><a href="fukuiLL.schedule.html">SCHEDULE<a></li>
-          <li><a href="fukuiLL.data.html">DATA・SNS</a></li>
-          <li><a href="fukuiLL.contact.html">CONTACT<a></li>
-        </ul>
-      </nav>
-    </header>
-    <h2 style="text-align:center; padding:20px"><font color="#ff007f">SCHEDULE</font></h2>
-    <h3 style="text-align:center; padding:20px; color:#000"><font color="#000">
-      <iframe src="https://calendar.google.com/calendar/embed?src=fukuillsg2019%40gmail.com&ctz=Asia%2FTokyo" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="icon.jpg">
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="ライブ、ファンミ、キャラや声優さんの誕生日など、ラブライブ！関連の重要日程を一目でチェック！福井大学ラブライブ研究会の最新活動スケジュールも公開中！">
+  <link rel="stylesheet" href="style.css" >
+  <title>SCHEDULE/福井大学ラブライブ！研究会・福井大学ラブライブ研究会</title>
+</head>
+<body>
+  <header class="header">
+  <h1><a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/"><img src="BAN2.jpg" alt="ホームへ" width="150px"><a></h1>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div class="hamburger__line"></div>
+      <div class="hamburger__line"></div>
+      <div class="hamburger__line"></div>
+    </div>
+    <div class="menu slide-top" id="menu">
+      <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.about.html" class="menu__item">
+        <span class="icon"><img src="miracle.png" /></span><span class="text">ABOUT</span>
+      </a>
+      <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.member.html" class="menu__item">
+        <span class="icon"><img src="noriko.png" /></span><span class="text">MEMBER</span>
+      </a>
+      <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.activity.html" class="menu__item">
+        <span class="icon"><img src="kosuzu.png" /></span><span class="text">ACTIVITY</span>
+      </a>
+      <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.introduction.html" class="menu__item">
+        <span class="icon"><img src="sayaka.png" /></span><span class="text">INTRODUCTION</span>
+      </a>
+      <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.schedule.html" class="menu__item">
+        <span class="icon"><img src="ginko.png" /></span><span class="text">SCHEDULE</span>
+      </a>
+      <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.data.html" class="menu__item">
+        <span class="icon"><img src="rurino.png" /></span><span class="text">DATA・SNS</span>
+      </a>
+      <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.contact.html" class="menu__item">
+        <span class="icon"><img src="serasu.png" /></span><span class="text">CONTACT</span>
+      </a>
+    </div>
+  </header>
+   <h2 style="text-align:center; padding:20px"><font color="#ff007f">SCHEDULE</font></h2>
+   <h3  class="googleCalendar">
+    <iframe src="https://calendar.google.com/calendar/embed?src=fukuillsg2019%40gmail.com&ctz=Asia%2FTokyo" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
    </h3>
     <a class="pagetop" href="#"><div class="pagetop__arrow"></div></a>
-    <footer style="background-color:#ff007f; padding-top:20px; text-align:center">
+  <footer style="background-color:#ff007f; padding-top:20px; text-align:center">
     <p style="color:#fff">by Fukui University LL study group</p>
   </footer>
-  </body>
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      const trigger = document.querySelector('.hamburger');
+      menu.classList.toggle('open');
+      trigger.classList.toggle('open');
+    }
+  </script>
+</body>
 </html>
-
-
-
-
-
-
-
-
-

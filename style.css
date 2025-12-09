@@ -181,3 +181,12 @@
     .sp-br {
     display: none;
     }}
+    .googleCalendar iframe {
+    width: 100%;
+    height: 400px;
+    }
+    @media all and (min-width: 768px) {
+    .googleCalendar iframe {
+    height: 600px;
+    }}
+
