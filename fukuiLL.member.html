@@ -1,107 +1,52 @@
-<title>メンバー|福井大学ラブライブ！研究会</title>
 <html lang="ja" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="icon" href="favicon.ico" sizes="any">
-    <link rel="icon" href="icon.png" type="image/png">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-     <style>
-    * {
-       box-sizing: border-box;
-    }
-    body {
-       margin: 0;
-       padding: 0;
-       font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
-       background-color: #fff;
-    }
-    header {
-       padding: 30px 4% 10px;
-       top: 0;
-       width: 100%;
-       background-color: #ff007f;
-       display: flex;
-       align-items: center;
-    }
-    h1 {
-       margin: 0; padding: 0;
-       font-size: 25px;
-    }
-    a {
-       text-decoration: none;
-       color: #fff;
-    }
-    ul {
-       list-style: none;
-       margin: 0;
-       display: flex;
-    }
-    nav {
-       margin: 0 0 0 auto;
-    }
-    li {
-       list-style: none;
-       margin: 0 0 0 15px;
-       font-size: 15px;
-    }
-   .X  {
-       border-spacing: 10px;
-       border: 0px solid #fff;
-    }
-    .resizeimage img { width: 100%; 
-    }
-        html {
-    scroll-behavior: smooth;
-    }
-    .pagetop {
-    height: 50px;
-    width: 50px;
-    position: fixed;
-    right: 30px;
-    bottom: 30px;
-    background: #fff;
-    border: solid 2px #000;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 2;
-    }
-    .pagetop__arrow {
-    height: 10px;
-    width: 10px;
-    border-top: 3px solid #000;
-    border-right: 3px solid #000;
-    transform: translateY(20%) rotate(-45deg);
-    }
-    @media (hover: hover) and (pointer: fine) {
-    .pagetop:hover, .pagetop:hover .pagetop__arrow {
-        border-color: #ff007f;
-    }}
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1><a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/"><img src="BAN2.jpg" alt="ホームへ" width="150px"><a></h1>
-      <nav class="pc-nav">
-        <ul>
-          <li><a href="fukuiLL.about.html">ABOUT<a></li>
-          <li><a href="fukuiLL.member.html">MEMBER<a></li>
-          <li><a href="fukuiLL.activity.html">ACTIVITY</a></li>
-          <li><a href="fukuiLL.introduction.html">INTRODUCTION<a></li>
-          <li><a href="fukuiLL.schedule.html">SCHEDULE<a></li>
-          <li><a href="fukuiLL.data.html">DATA・SNS</a></li>
-          <li><a href="fukuiLL.contact.html">CONTACT<a></li>
-        </ul>
-      </nav>
-    </header>
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="icon.jpg">
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="福井大学ラブライブ研究会の公式サイトです！μ'sからイキヅライブまで、ライブ参戦や聖地巡礼、アニクラなど幅広く活動中！SNSや活動記録を通して、サークルのリアルな活動風景をお届けします。新入部員や兼部も大歓迎！福大のラブライバーはぜひ記事をチェックしてみてください！">
+  <link rel="stylesheet" href="style.css" >
+  <title>福井大学ラブライブ！研究会・福井大学ラブライブ研究会</title>
+</head>
+<body>
+  <header class="header">
+  <h1><a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/"><img src="BAN2.jpg" alt="ホームへ" width="150px"><a></h1>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div class="hamburger__line"></div>
+      <div class="hamburger__line"></div>
+      <div class="hamburger__line"></div>
+    </div>
+    <div class="menu slide-top" id="menu">
+      <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.about.html" class="menu__item">
+        <span class="icon"><img src="miracle.png" /></span><span class="text">ABOUT</span>
+      </a>
+      <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.member.html" class="menu__item">
+        <span class="icon"><img src="noriko.png" /></span><span class="text">MEMBER</span>
+      </a>
+      <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.activity.html" class="menu__item">
+        <span class="icon"><img src="kosuzu.png" /></span><span class="text">ACTIVITY</span>
+      </a>
+      <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.introduction.html" class="menu__item">
+        <span class="icon"><img src="sayaka.png" /></span><span class="text">INTRODUCTION</span>
+      </a>
+      <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.schedule.html" class="menu__item">
+        <span class="icon"><img src="ginko.png" /></span><span class="text">SCHEDULE</span>
+      </a>
+      <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.data.html" class="menu__item">
+        <span class="icon"><img src="rurino.png" /></span><span class="text">DATA・SNS</span>
+      </a>
+      <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.contact.html" class="menu__item">
+        <span class="icon"><img src="serasu.png" /></span><span class="text">CONTACT</span>
+      </a>
+    </div>
+  </header>
     <h2 style="text-align:center; padding:20px"><font color="#ff007f">MEMBER</font></h2>
     <div style="background-color:#00bfff; padding:20px; text-align:center">
-      <h2 style="color:#fff">Master 2nd</h2>
+     <h2 style="color:#fff">Master 2nd</h2>
     </div>
     <div style="background-color:#fff; padding:20px; text-align:center">
       <h2><font color="#000">ブライヤソ</h2>
-        <h3>絢瀬絵里に脳を焼かれ、さゆやぶにも脳を焼かれ、最近は三船栞子にも脳を焼かれた男<br>推しの高垣楓と同い年になって恐怖してる<br>推し：さゆやぶ</h3>
+        <h3>絢瀬絵里に脳を焼かれ、<br class="sp-br">さゆやぶにも脳を焼かれ、<br class="sp-br">最近は三船栞子にも脳を焼かれた男<br>推しの高垣楓と同い年になって恐怖してる<br>推し：さゆやぶ</h3>
       </font>
     </div>
     <div style="background-color:#ffcc00; padding:20px; text-align:center">
@@ -113,7 +58,7 @@
       <h2><font color="#000">かんた</h2>
         <h3>ラブライバーには彼女はできない<br>本当だからだ！<br>推し：上原歩夢</h3>
       <h2><font color="#000">ふみふみ</h2>
-        <h3>フィルハーモニーのバイオリニストなので実質ミア・テイラー<br>推しもミア・テイラー<br>推し：ミア・テイラー</h3>
+        <h3>フィルハーモニーのバイオリニストなので<br class="sp-br">実質ミア・テイラー<br>推しもミア・テイラー<br>推し：ミア・テイラー</h3>
       </font>
     </div>
     <div style="background-color:#cc99ff; padding:20px; text-align:center">
@@ -121,7 +66,7 @@
     </div>
     <div style="background-color:#fff; padding:20px; text-align:center">
       <h2><font color="#000">ねおすか</h2>
-        <h3>医学部からの異端者<br>高咲侑のアクスタを全種持っているとかいないとか<br>推し：高咲侑・結那</h3>
+        <h3>医学部からの異端者<br>高咲侑のアクスタを全種持っている<br class="sp-br">とかいないとか<br>推し：高咲侑・結那</h3>
       </font>
     </div>
     <div style="background-color:#ffc0cb; padding:20px; text-align:center">
@@ -135,7 +80,7 @@
         <h3>かなまり過激主義者<br>工大の異端者でもある<br>推し：かなまり</h3>
       </font>
       <h2><font color="#000">ずらまる</h2>
-        <h3>バドミントンがうますぎる人<br>最近はバドミントンだけでライブに行けてない<br>推し：国木田花丸</h3>
+        <h3>バドミントンがうますぎる人<br>最近はバドミントンだけで<br class="sp-br">ライブに行けてない<br>推し：国木田花丸</h3>
       </font>
       <h2><font color="#000">ありもと</h2>
         <h3>大学からラブライブ！を見始めた人<br>とりあえず愛さんを愛さんと！<br>推し：宮下愛</h3>
@@ -160,7 +105,7 @@
         <h3>プリキュアガチ勢<br>プリキュアは全国民が見るべき</h3>
       </font>      
         <h2><font color="#000">あゆと</h2>
-        <h3>野球やってたってさ<br>じゃあ大谷翔平もびっくりのラブライバーとの二刀流かぁ</h3>
+        <h3>野球やってたってさ<br>じゃあ大谷翔平もびっくりの<br class="sp-br">ラブライバーとの二刀流かぁ</h3>
       </font>
         <h2><font color="#000">かいと</h2>
         <h3>Sosen部員<br>バスケやってたって実質...誰だ<br>アノニマスに関わってるとか...</h3>
@@ -168,8 +113,8 @@
         <h2><font color="#000">ゆ～と</h2>
         <h3>Sosen部員<br>すご～くおしゃべりさん</h3>      
       </font>      
-        <h2><font color="#000">佐藤日向</h2>
-        <h3>自己紹介で「佐藤日向」と同じといったことので、実質理亞<br>そんな彼女はAqours推し</h3>
+        <h2><font color="#000">さとひな</h2>
+        <h3>自己紹介で「佐藤日向」と同じ<br class="sp-br">と言ったので、<br class="sp-br">実質理亞<br>そんな彼女はAqours推し</h3>
       </font>
         <h2><font color="#000">ちさき</h2>
         <h3>県立大の恐竜学部の異端者<br>華Doll*をご覧中<br>今年から勝山の方へ</h3>
@@ -202,13 +147,16 @@
       </font>
     </div>
     <a class="pagetop" href="#"><div class="pagetop__arrow"></div></a>
-    <footer style="background-color:#ff007f; padding-top:20px; text-align:center">
+  <footer style="background-color:#ff007f; padding-top:20px; text-align:center">
     <p style="color:#fff">by Fukui University LL study group</p>
   </footer>
-  </body>
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      const trigger = document.querySelector('.hamburger');
+      menu.classList.toggle('open');
+      trigger.classList.toggle('open');
+    }
+  </script>
+</body>
 </html>
-
-
-
-
-
