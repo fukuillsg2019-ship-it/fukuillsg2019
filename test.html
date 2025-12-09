@@ -1,0 +1,231 @@
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="icon.jpg">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width">
+    <title>福井大学ラブライブ！研究会・福井大学ラブライブ研究会</title>
+    <style>
+    * {
+       box-sizing: border-box;
+       max-width: 100vw;
+    }
+    body {
+       margin: 0;
+       padding: 0;
+       font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
+       background-color: #fff;
+       overflow-x: hidden;
+    }
+    header {
+       position: relative; 
+       padding: 30px 4% 10px;
+       top: 0;
+       width: auto;
+       background-color: #ff007f;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       text-align: center;
+    }
+    h1 {
+       margin: 0; padding: 0;
+       font-size: 25px;
+    }
+    a {
+       text-decoration: none;
+       color: #fff;
+    }
+    ul {
+       list-style: none;
+       margin: 0;
+       display: flex;
+    }
+    nav {
+       margin: 0 0 0 auto;
+    }
+    li {
+       list-style: none;
+       margin: 0 0 0 15px;
+       font-size: 12px;
+    }
+   .X  {
+       border-spacing: 10px;
+       border: 0px solid #fff;
+    }
+    .resizeimage img { width: 100%; 
+    }
+    .hamburger {
+      position: absolute; 
+      right: 20px; 
+      top: 50%; 
+      transform: translateY(-50%);
+      width: 30px;
+      height: 21px;
+      cursor: pointer;
+      z-index: 9999;
+    }
+    .hamburger__line {
+      position: absolute; 
+      width: 30px;
+      height: 3px;
+      background-color: #ffffff;
+      border-radius: 2px;
+      transition: all 300ms ease;
+    }
+    .hamburger__line:nth-child(1) { 
+      top: 0px; 
+    }
+    .hamburger__line:nth-child(2) { 
+      top: 9px; 
+    }
+    .hamburger__line:nth-child(3) { 
+      top: 18px; 
+    }
+    .hamburger.open .hamburger__line:nth-child(1) {
+      top: 9px;
+      transform: rotate(45deg);
+    }
+    .hamburger.open .hamburger__line:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.open .hamburger__line:nth-child(3) {
+      top: 9px;
+      transform: rotate(-45deg);
+    }
+    .menu {
+      position: absolute; 
+      top: 100%;          
+      right: 0;           
+      flex-direction: column;
+      display: flex;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(300px);
+      transition: all 300ms ease;
+      width: 300px;
+      background-color: #fff;
+      color: #ff007f;
+      padding: 20px;
+      gap: 10px;
+      z-index: 9998;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    
+    .menu.open {
+      opacity: 1;
+      transform: translateX(0);
+      visibility: visible;
+    }
+    
+    .menu__item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      font-size: 16px;
+      color: inherit;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #ff007f;
+    }
+    .menu__item:last-child {
+      border-bottom: none;
+    }
+    
+    .icon img {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+    }
+    .slide-right-enter-active,
+    .slide-right-leave-active {  
+    transition: all 300ms ease;  
+    }
+    .slide-right-enter-from,
+    .slide-right-leave-to {
+      opacity: 0;
+      transform: translateX(300px);
+    }
+    .slide-right-enter-to,
+    .slide-right-leave-from {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    </style>
+  </head>
+<body>
+    <header class="header">
+    <center><h1><a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/"><img src="BAN2.jpg" alt="ホームへ" width="150px"><a></h1></center>
+      <div class="hamburger" onclick="toggleMenu()">
+       <div class="hamburger__line"></div>
+       <div class="hamburger__line"></div>
+       <div class="hamburger__line"></div>
+      </div>
+      <div class="menu slide-top" id="menu">
+        <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.about.html" class="menu__item">
+          <span class="icon"><img src="miracle.png" /></span><span class="text">ABOUT</span>
+        </a>
+        <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.member.html" class="menu__item">
+          <span class="icon"><img src="noriko.png" /></span><span class="text">MEMBER</span>
+        </a>
+        <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.activity.html" class="menu__item">
+          <span class="icon"><img src="kosuzu.png" /></span><span class="text">ACTIVITY</span>
+        </a>
+        <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.introduction.html" class="menu__item">
+          <span class="icon"><img src="sayaka.png" /></span><span class="text">INTRODUCTION</span>
+        </a>
+        <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.schedule.html" class="menu__item">
+          <span class="icon"><img src="ginko.png" /></span><span class="text">SCHEDULE</span>
+        </a>
+        <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.data.html" class="menu__item">
+          <span class="icon"><img src="rurino.png" /></span><span class="text">DATA・SNS</span>
+        </a>
+        <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.contact.html" class="menu__item">
+          <span class="icon"><img src="serasu.png" /></span><span class="text">CONTACT</span>
+        </a>
+      </div>
+    </header>
+      <div style="background-color:#fff; padding:20px">
+        <h2 style="text-align:center"><span style="color:#ff007f">福井大学ラブライブ！研究会</span></h2>  
+      </div>
+    <p class="resizeimage">
+      <img src="BAN1.jpg" alt="ニジガクのみんな" >
+    </p>
+        <h4 style="text-align:right"><span style="color:#000">Drew by ばん様(<a href="https://twitter.com/One_ban7241"><font color="#ff007f">@One_ban7241</font></a>)</span></h4>
+    <div style="background-color:#3399ff; padding:20px">
+     <h2 style="text-align:center"><span style="color:#fff">毎週金曜日に文京キャンパスで<br>自由気ままに活動中<br>ゲームをやったり、課題をやったり、各々色んなことをやってます！</h2>
+    </div>
+    <div style="background-color:#ffcc00; padding:20px">
+     <h2 style="text-align:center"><span style="color:#fff">新入部員歓迎中！<br>新一年生も<br>違う学年も<br>大募集！</h2>
+    </div>
+    <div style="background-color:#cc99ff; padding:20px; text-align:center">
+     <h2 style="text-align:center"><span style="color:#fff">活動内容</h2>
+     <h3 style="text-align:center"><span style="color:#fff">アニメ鑑賞はもちろん！<br>ライブ鑑賞・参戦！！<br>カラオケやアニクラで大盛り上がり！<br>学園祭では出店を出したり！<br>時には敦賀のカッターレースや長良川のリレーマラソンまで！？</h3></div>
+    <div style="background-color:#ffc0cb; padding:20px; text-align:center">
+     <h2 style="text-align:center"><span style="color:#b5002c">福井でのラブライバーが受ける恩恵</h2>
+     <h3 style="text-align:center"><span style="color:#b5002c">福井は『蓮ノ空女学院スクールアイドルクラブ』の聖地である石川県・金沢に車で1時間程度で行くことができ<br>気軽に聖地巡礼が可能！<br>さらに、蓮ノ空女学院のDOLLCHESTRAの徒町小鈴は福井県敦賀市出身！<br>さらにさらに！新シリーズの『イキヅライブ！』では福井サテライトが誕生！<br>金澤奇跡と調布のりこが所属していており、福井自体が聖地に！</h3></div>
+    </div>
+    <div style="background-color:#008bc2; padding:20px; text-align:center">
+      <h2 style="text-align:center"><span style="color:#fff">SNS</h2>
+      <table class="X"; align="center">
+       <tr>
+        <td><a href="https://x.com/FukubunLLSG2019"><img src="X.png" alt="ツイッターへ" width="50" height="50"></a><p style="color:#fff">文京・工大</p></td>
+        <td><a href="https://x.com/FukueiheijiLLSG21"><img src="X.png" alt="ツイッターへ" width="50" height="50"></a><p style="color:#fff">松岡・県大</p></td>
+        <td><a href="https://www.instagram.com/fukudai.raken/?igsh=cm4wN3l4OG1iajJw#9"><img src="Instagram.png" alt="インスタグラムへ" width="50" height="50"></a><p style="color:#fff">Instagram</p></td>
+        <td><a href="https://note.com/fukuillsg2019"><img src="note.png" alt="noteへ" width="50" height="50"></a><p style="color:#fff; text-align:center;">note</p></td>
+       </tr>
+      </table>
+    </div>
+    <footer style="background-color:#ff007f; padding-top:20px; text-align:center">
+    <p style="color:#fff">by Fukui University LL study group</p>
+    </footer>
+    <script>// JavaScript
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      const trigger = document.querySelector('.hamburger');
+      menu.classList.toggle('open');
+      trigger.classList.toggle('open');
+    }</script>
+</body>
+</html>
