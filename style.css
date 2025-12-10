@@ -593,15 +593,16 @@ header {
         width: 100%;
         height: 120px;   
         padding: 0 20px;            /* ← スマホでの実ヘッダー高さ */
-        background-color: #00AEEF;  /* ← 好きな色に変更可（必須） */
         z-index: 200000;
     }
 
     /* ページ内容がヘッダーの裏に入らないように余白を付ける */
+
 #wrap {
-        padding-top: 120px;   /* ← ヘッダーの高さ分を追加（超重要） */
-        overflow: visible;   /* ← メニューがはみ出してもOKにする */
+        padding-top: 120px;  /* ← ヘッダーの高さに合わせて調整 */
+        overflow: visible;
     }
+
 
     /* メニュー：ヘッダーの下から全画面表示 */
 .menu {
