@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ▼9. 本文中のリンク文字の色
     const linkColor = linkColorMap[bgColor];
-    document.querySelectorAll('main a').forEach(a => {
+    document.querySelectorAll('a').forEach(a => {
         a.style.color = linkColor;
     });
 
