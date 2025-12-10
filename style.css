@@ -102,28 +102,26 @@ li {
 }
     
 .menu {
-    position: absolute; 
-    top: 100%;          
-    right: 0;           
-    flex-direction: column;
-    display: flex;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 260px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(6px);
+    border-radius: 8px;
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-20px);
-    transition: all 300ms ease;
-    width: 300px;
-    padding: 20px;
-    gap: 10px;
-    z-index: 9998;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transform: translateY(0); /* ← 重要！ズレ防止 */
+    transition: opacity 0.3s ease;
+    z-index: 100001;
 }
-    
+
 .menu.open {
     opacity: 1;
-    transform: translateX(0);
     visibility: visible;
 }
-    
+
 .menu__item {
     display: flex;
     align-items: center;
@@ -133,6 +131,8 @@ li {
     color: inherit;
     padding-bottom: 10px;
     border-bottom: 1px solid #fff;
+    padding: 14px 0;
+    line-height: 1.5;
 }
     
 .menu__item:last-child {
@@ -352,7 +352,7 @@ th, td {
 
 #wrap {
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     width: 100%;
     margin: 0 auto;    
 }
@@ -398,6 +398,7 @@ header,h2,h3,p,footer {
     font-family: sans-serif;
     color: white;
     }
+
 h4 {
     display: flex;
     justify-content: right;
@@ -576,4 +577,65 @@ h4 {
 /* ローディング終了時に上へスライド */
 #loader.slide-up {
     transform: translateY(-100%);
+}
+
+/* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+    スマホ（768px以下）では
+    ヘッダー固定 + 背景維持 + メニューはヘッダー下から全画面
+    内容の先頭がヘッダーに隠れないよう padding 追加
+   ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ */
+@media screen and (max-width: 768px) {
+
+    /* ヘッダーを常に表示して背景を確保 */
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 120px;   
+        padding: 0 20px;            /* ← スマホでの実ヘッダー高さ */
+        background-color: #00AEEF;  /* ← 好きな色に変更可（必須） */
+        z-index: 200000;
+    }
+
+    /* ページ内容がヘッダーの裏に入らないように余白を付ける */
+    #wrap {
+        padding-top: 120px;   /* ← ヘッダーの高さ分を追加（超重要） */
+        overflow: visible;   /* ← メニューがはみ出してもOKにする */
+    }
+
+    /* メニュー：ヘッダーの下から全画面表示 */
+    .menu {
+        position: fixed;
+        top: 120px;                     /* ← ヘッダーの真下から開始 */
+        left: 0;
+        width: 100vw;
+        height: calc(100vh - 120px);    /* ← 全画面からヘッダーを引く */
+        overflow-y: auto;
+        padding: 20px;
+
+        background-color: rgba(0, 0, 0, 0.35);
+        backdrop-filter: blur(6px);
+
+        z-index: 150000;
+
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: all 0.25s ease;
+    }
+
+    .menu.open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    /* メニュー項目の見た目調整 */
+    .menu__item {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 18px 10px;
+    }
 }

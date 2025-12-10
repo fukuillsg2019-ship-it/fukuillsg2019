@@ -95,6 +95,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // ▼5. 背景色を適用
     document.body.style.backgroundColor = bgColor;
 
+    document.querySelector('header').style.backgroundColor = bgColor;
+
     // ▼6. 普通の文字色 (本文)
     const textColor = textColorMap[bgColor];
     document.body.style.color = textColor;
