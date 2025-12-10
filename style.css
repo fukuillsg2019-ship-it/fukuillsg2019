@@ -17,7 +17,6 @@
     padding: 30px 4% 10px;
     top: 0;
     width: auto;
-    background-color: #ff007f;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -310,7 +309,6 @@
     transition: .5s;
     }
     .slideContsR {
-    background-color: #fff;
     transform: translate(100%, 0);    
     }
     .slideContsR.show {
@@ -328,4 +326,24 @@
     }
     .fadeConts.show {
     opacity: 1;
+    }
+    header,h2,h3,p,footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    margin: 0;
+    transition: background-color 0.5s ease;
+    font-family: sans-serif;
+    color: white;
+    }
+    h4 {
+    display: flex;
+    justify-content: right;
+    align-items: right;
+    height: auto;
+    margin: 0;
+    transition: background-color 0.5s ease;
+    font-family: sans-serif;
+    color: white;
     }

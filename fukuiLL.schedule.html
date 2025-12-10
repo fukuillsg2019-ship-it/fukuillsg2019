@@ -19,44 +19,43 @@
   <title>カレンダー/福井大学ラブライブ！研究会・福井大学ラブライブ研究会</title>
 </head>
 <body>
-  <div id="wrap">
-  <header class="header">
-  <h1><a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/"><img src="BAN2.jpg" alt="ホームへ" width="150px"><a></h1>
+    <header class="header">
+    <h1><a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/"><img src="fukuillsg.logo.png" alt="ホームへ" width="150px"><a></h1>
     <div class="hamburger" onclick="toggleMenu()">
-      <div class="hamburger__line"></div>
-      <div class="hamburger__line"></div>
-      <div class="hamburger__line"></div>
+    <div class="hamburger__line"></div>
+    <div class="hamburger__line"></div>
+    <div class="hamburger__line"></div>
     </div>
     <div class="menu slide-top" id="menu">
-      <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/" class="menu__item">
-        <span class="icon"><img src="miracle.png" /></span><span class="text">HOME</span>
-      </a>
-      <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.about.html" class="menu__item">
-         <span class="icon"><img src="noriko.png" /></span><span class="text">ABOUT</span>
-      </a>
-      <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.member.html" class="menu__item">
-        <span class="icon"><img src="kosuzu.png" /></span><span class="text">MEMBER</span>
-      </a>
-      <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.activity.html" class="menu__item">
-        <span class="icon"><img src="sayaka.png" /></span><span class="text">ACTIVITY</span>
-      </a>
-      <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.introduction.html" class="menu__item">
-        <span class="icon"><img src="ginko.png" /></span><span class="text">INTRODUCTION</span>
-      </a>
-      <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.schedule.html" class="menu__item">
-        <span class="icon"><img src="megumi.png" /></span><span class="text">SCHEDULE</span>
-      </a>
-      <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.data.html" class="menu__item">
-        <span class="icon"><img src="rurino.png" /></span><span class="text">DATA・SNS</span>
-      </a>
-      <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.contact.html" class="menu__item">
-        <span class="icon"><img src="serasu.png" /></span><span class="text">CONTACT</span>
-      </a>
+    <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/" class="menu__item">
+    <span class="icon"><img src="miracle.png" /></span><span class="text">HOME</span>
+    </a>
+    <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.about.html" class="menu__item">
+    <span class="icon"><img src="noriko.png" /></span><span class="text">ABOUT</span>
+    </a>
+    <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.member.html" class="menu__item">
+    <span class="icon"><img src="kosuzu.png" /></span><span class="text">MEMBER</span>
+    </a>
+    <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.activity.html" class="menu__item">
+    <span class="icon"><img src="sayaka.png" /></span><span class="text">ACTIVITY</span>
+    </a>
+    <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.introduction.html" class="menu__item">
+    <span class="icon"><img src="ginko.png" /></span><span class="text">INTRODUCTION</span>
+    </a>
+    <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.schedule.html" class="menu__item">
+    <span class="icon"><img src="megumi.png" /></span><span class="text">SCHEDULE</span>
+    </a>
+    <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.data.html" class="menu__item">
+    <span class="icon"><img src="rurino.png" /></span><span class="text">DATA・SNS</span>
+    </a>
+    <a href="https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.contact.html" class="menu__item">
+    <span class="icon"><img src="serasu.png" /></span><span class="text">CONTACT</span>
+    </a>
     </div>
-  </header>
+    </header>
   <div class="slideContsR
     slideConts">  
-   <h2 style="text-align:center; padding:20px"><font color="#ff007f">SCHEDULE</font></h2>
+   <h2 style="color:#fff; text-align:center; padding:20px">SCHEDULE</h2>
   </div>
    <div class="fadeConts">
    <h3  class="googleCalendar">
@@ -64,10 +63,9 @@
    </h3>
    </div>
     <a class="pagetop" href="#"><div class="pagetop__arrow"></div></a>
-  <footer style="background-color:#ff007f; padding-top:20px; text-align:center">
+  <footer style="padding-top:20px; text-align:center">
     <p style="color:#fff">by Fukui University LL study group</p>
   </footer>
-  </div>
     <script>
     function toggleMenu() {
       const menu = document.getElementById('menu');
@@ -122,9 +120,21 @@
     } else {
       fadeConts[i].classList.remove('show');
     }}});
+    document.addEventListener('DOMContentLoaded', (event) => {
+    const colors = [
+    { name: 'ラブライブ', value: '#ff007f' },
+    { name: 'サンシャイン', value: '#00bfff' },
+    { name: '虹ヶ咲', value: '#ffcc00' },
+    { name: 'スーパースター', value: '#cc99ff' },
+    { name: '蓮ノ空', value: '#ffc0cb' },
+    { name: 'イキヅライブ', value: '#008bc2' },
+    { name: 'スクミュ', value: '#d70035' }
+    ];
+    const randomIndex = Math.floor(Math.random() * colors.length);
+    const selectedColor = colors[randomIndex];
+    document.body.style.backgroundColor = selectedColor.value;
+    document.getElementById('colorName').textContent = `選ばれた色: ${selectedColor.name}`;
+        });
     </script>
     </body>
-
     </html>
-
-
