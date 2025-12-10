@@ -70,10 +70,23 @@
         "#008bc2": "#ffffff",
         "#d70035": "#ffd700"
     };
+    const linkColorMap = {
+        "#ff007f": "#000000",
+        "#00bfff": "#000000",
+        "#ffcc00": "#ffffff",
+        "#cc99ff": "#000000",
+        "#ffc0cb": "#ffffff",
+        "#008bc2": "#000000",
+        "#d70035": "#ffffff"
+    };
     const randomIndex = Math.floor(Math.random() * colors.length);
     const selectedColor = colors[randomIndex];
     document.body.style.backgroundColor = selectedColor.value;
     const textColor = textColorMap[selectedColor.value];
+    const linkColor = linkColorMap[selectedColor.value];
+    document.querySelectorAll('main a').forEach(a => {
+    a.style.color = linkColor;
+    });
     document.body.style.color = textColor;
     document.querySelector('.menu').style.color = textColor;
     document.querySelectorAll('.menu__item .text').forEach(item => {
