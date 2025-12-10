@@ -82,13 +82,13 @@
     const randomIndex = Math.floor(Math.random() * colors.length);
     const selectedColor = colors[randomIndex];
     document.body.style.backgroundColor = selectedColor.value;
+    document.querySelector('.menu').style.backgroundColor = selectedColor.value;
     const textColor = textColorMap[selectedColor.value];
     const linkColor = linkColorMap[selectedColor.value];
     document.querySelectorAll('main a').forEach(a => {
     a.style.color = linkColor;
     });
     document.body.style.color = textColor;
-    document.querySelector('.menu').style.backgroundColor = selectedColor.value;
     document.querySelector('.menu').style.color = textColor;
     document.querySelectorAll('.menu__item .text').forEach(item => {
         item.style.color = textColor;
