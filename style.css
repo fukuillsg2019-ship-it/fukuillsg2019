@@ -112,8 +112,6 @@ li {
     transform: translateY(-20px);
     transition: all 300ms ease;
     width: 300px;
-    background-color: #fff;
-    color: #ff007f;
     padding: 20px;
     gap: 10px;
     z-index: 9998;
@@ -134,7 +132,7 @@ li {
     font-size: 16px;
     color: inherit;
     padding-bottom: 10px;
-    border-bottom: 1px solid #ff007f;
+    border-bottom: 1px solid #fff;
 }
     
 .menu__item:last-child {
