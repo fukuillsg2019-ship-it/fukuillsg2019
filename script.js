@@ -132,3 +132,23 @@ window.addEventListener('load', () => {
     loader.classList.add('slide-up');
     setTimeout(() => { loader.style.display = 'none'; }, 1200);
 });
+
+let tapCount = 0;
+let tapTimer = null;
+
+function secretTrigger() {
+    // 5回タップ／クリックで秘密ページへ
+    tapCount++;
+    
+    if (tapCount >= 5) {
+        window.location.href = "fun.html";  // ← あなたの秘密ページ
+    }
+
+    // タップ間隔が長い場合はリセット（1秒以内）
+    clearTimeout(tapTimer);
+    tapTimer = setTimeout(() => tapCount = 0, 1000);
+}
+
+// PCクリック & スマホタップ両対応
+window.addEventListener("click", secretTrigger);
+window.addEventListener("touchstart", secretTrigger);
