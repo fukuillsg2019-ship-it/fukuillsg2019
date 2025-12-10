@@ -53,19 +53,34 @@
     }}});
     document.addEventListener('DOMContentLoaded', (event) => {
     const colors = [
-    { name: 'ラブライブ', value: '#ff007f' },
-    { name: 'サンシャイン', value: '#00bfff' },
-    { name: '虹ヶ咲', value: '#ffcc00' },
-    { name: 'スーパースター', value: '#cc99ff' },
-    { name: '蓮ノ空', value: '#ffc0cb' },
-    { name: 'イキヅライブ', value: '#008bc2' },
-    { name: 'スクミュ', value: '#d70035' }
+        { name: 'ラブライブ', value: '#ff007f' },
+        { name: 'サンシャイン', value: '#00bfff' },
+        { name: '虹ヶ咲', value: '#ffcc00' },
+        { name: 'スーパースター', value: '#cc99ff' },
+        { name: '蓮ノ空', value: '#ffc0cb' },
+        { name: 'イキヅライブ', value: '#008bc2' },
+        { name: 'スクミュ', value: '#d70035' }
     ];
+    const textColorMap = {
+        "#ff007f": "#ffffff",
+        "#00bfff": "#ffffff",
+        "#ffcc00": "#000000",
+        "#cc99ff": "#ffffff",
+        "#ffc0cb": "#b5002c",
+        "#008bc2": "#ffffff",
+        "#d70035": "#ffd700"
+    };
     const randomIndex = Math.floor(Math.random() * colors.length);
     const selectedColor = colors[randomIndex];
     document.body.style.backgroundColor = selectedColor.value;
+    const textColor = textColorMap[selectedColor.value];
+    document.body.style.color = textColor;
+    document.querySelector('.menu').style.color = textColor;
+    document.querySelectorAll('.menu__item .text').forEach(item => {
+        item.style.color = textColor;
+    });
     document.getElementById('colorName').textContent = `選ばれた色: ${selectedColor.name}`;
-        });
+    });
     window.addEventListener('load', () => {
     const loader = document.getElementById('loader');
     loader.classList.add('loaded');
@@ -73,4 +88,4 @@
     setTimeout(() => {
         loader.style.display = 'none';
     }, 1200);
-        });
+    });
