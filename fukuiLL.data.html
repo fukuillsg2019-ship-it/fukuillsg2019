@@ -88,10 +88,11 @@
     </div>
     <div class="slideContsR
     slideConts" style="margin-bottom: 20px;"> 
-    <div style="background-color:#ff007f; padding:20px">
-    <center><img src="ラブライブ.png" alt="LoveLive.logo" width="400" height="200"></center>
-    </div>
-    </div>
+    <div style="background-color:#ff007f; padding:20px; align-items: center;">
+   <div class="container">
+   <div class="photo-item"> 
+   <img src="ラブライブ.png" alt="LoveLive.logo">
+    </div></div></div></div>
    <div class="fadeConts" style="margin-bottom: 20px;">
     <div class="table-scroll-wrapper; table-container">
         <table border="1" width="700" align="center" bgcolor="#ffb2d7">
@@ -162,10 +163,11 @@
    </div>
    <div class="slideContsR
     slideConts" style="margin-bottom: 20px;"> 
-    <div style="background-color:#00bfff; padding:20px">
-    <center><img src="サンシャイン.png" alt="Sunshine.logo" width="400"></center>
-    </div>
-   </div>
+    <div style="background-color:#00bfff; padding:20px; align-items: center;">
+   <div class="container">
+   <div class="photo-item"> 
+   <img src="サンシャイン.png" alt="Sunshine.logo">
+   </div></div></div></div>
    <div class="fadeConts" style="margin-bottom: 20px;">
     <div class="table-scroll-wrapper; table-container">
         <table border="1" width="700" align="center" bgcolor="#b2ebff">
@@ -230,10 +232,11 @@
    </div>
    <div class="slideContsR
     slideConts" style="margin-bottom: 20px;">  
-    <div style="background-color:#ffcc00; padding:20px">
-    <center><img src="虹ヶ咲.png" alt="Nijigasaki.logo" width="400"></center>
-   </div>
-   </div>
+    <div style="background-color:#ffcc00; padding:20px; align-items: center;">
+   <div class="container">
+   <div class="photo-item"> 
+      <img src="虹ヶ咲.png" alt="Nijigasaki.logo">
+   </div></div></div></div>
    <div class="fadeConts" style="margin-bottom: 20px;">
     <div class="table-scroll-wrapper; table-container">
         <table border="1" width="700" align="center" bgcolor="#ffefb2">
@@ -313,10 +316,11 @@
    </div>
    <div class="slideContsR
     slideConts" style="margin-bottom: 20px;">  
-    <div style="background-color:#cc99ff; padding:20px">
-    <center><img src="スーパースター.png" alt="SuperStar.logo" width="400"></center>
-    </div>
-   </div>
+    <div style="background-color:#cc99ff; padding:20px; align-items: center;">
+   <div class="container">
+   <div class="photo-item"> 
+      <img src="スーパースター.png" alt="SuperStar.logo">
+   </div></div></div></div>
    <div class="fadeConts" style="margin-bottom: 20px;">
     <div class="table-scroll-wrapper; table-container">
         <table border="1" width="700" align="center" bgcolor="#ebd8ff">
@@ -392,10 +396,11 @@
    </div>
    <div class="slideContsR
     slideConts" style="margin-bottom: 20px;">  
-    <div style="background-color:#ffc0bc; padding:20px">
-    <center><img src="蓮ノ空.png" alt="Hasunosora.logo" width="400"></center>
-    </div>
-   </div>
+    <div style="background-color:#ffc0bc; padding:20px; align-items: center;">
+   <div class="container">
+   <div class="photo-item"> 
+      <img src="蓮ノ空.png" alt="Hasunosora.logo">
+   </div></div></div></div>
    <div class="fadeConts" style="margin-bottom: 20px;">
     <div class="table-scroll-wrapper; table-container">
         <table border="1" width="700" align="center" bgcolor="#ffdad8">
@@ -460,10 +465,11 @@
    </div>
    <div class="slideContsR
     slideConts" style="margin-bottom: 20px;">  
-    <div style="background-color:#008bc2; padding:20px">
-    <center><img src="イキヅライブ.png" alt="BlurBird.logo" width="400"></center>
-    </div>
-   </div>
+    <div style="background-color:#008bc2; padding:20px; align-items: center;">
+   <div class="container">
+   <div class="photo-item"> 
+      <img src="イキヅライブ.png" alt="BlurBird.logo">
+   </div></div></div></div>
    <div class="fadeConts" style="margin-bottom: 20px;">
     <div class="table-scroll-wrapper; table-container">
         <table border="1" width="700" align="center" bgcolor="#b2e9ff">
@@ -533,10 +539,11 @@
    </div>
    <div class="slideContsR
     slideConts" style="margin-bottom: 20px;">  
-    <div style="background-color:#d70035; padding:20px">
-    <center><img src="スクミュ.png" alt="BlurBird.logo" width="400"></center>
-    </div>  
-   </div>
+    <div style="background-color:#d70035; padding:20px; align-items: center;">
+   <div class="container">
+   <div class="photo-item"> 
+      <img src="スクミュ.png" alt="BlurBird.logo" width="400">
+   </div></div></div></div>
    <div class="fadeConts" style="margin-bottom: 20px;">
    <div class="table-scroll-wrapper; table-container">
         <table border="1" width="700" align="center" bgcolor="#ffb2c4">
@@ -688,75 +695,6 @@
   <footer style="padding-top:20px; text-align:center">
     <p style="color:#fff">by Fukui University LL study group</p>
   </footer>
-    <script>
-    function toggleMenu() {
-      const menu = document.getElementById('menu');
-      const trigger = document.querySelector('.hamburger');
-      menu.classList.toggle('open');
-      trigger.classList.toggle('open');
-    }
-    var slideConts = document.querySelectorAll('.slideConts'); 
-    var slideContsRect = []; 
-    var slideContsTop = []; 
-    var windowY = window.pageYOffset; 
-    var windowH = window.innerHeight; 
-    var remainder = 100; 
-    for (var i = 0; i < slideConts.length; i++) {
-    slideContsRect.push(slideConts[i].getBoundingClientRect());
-    }
-    for (var i = 0; i < slideContsRect.length; i++) {
-    slideContsTop.push(slideContsRect[i].top + windowY);
-    }
-    window.addEventListener('resize', function () {
-    windowH = window.innerHeight;
-    });
-    window.addEventListener('scroll', function () {
-    windowY = window.pageYOffset;
-    for (var i = 0; i < slideConts.length; i++) {
-    if(windowY > slideContsTop[i] - windowH + remainder) {
-      slideConts[i].classList.add('show');
-    } else {
-      slideConts[i].classList.remove('show');
-    }
-    }});
-    var fadeConts = document.querySelectorAll('.fadeConts');
-    var fadeContsRect = [];
-    var fadeContsTop = [];
-    var windowY = window.pageYOffset;
-    var windowH = window.innerHeight;
-    var remainder = 100; 
-    for (var i = 0; i < fadeConts.length; i++) {
-    fadeContsRect.push(fadeConts[i].getBoundingClientRect());
-    }
-    for (var i = 0; i < fadeContsRect.length; i++) {
-    fadeContsTop.push(fadeContsRect[i].top + windowY);
-    }
-    window.addEventListener('resize', function () {
-    windowH = window.innerHeight;
-    });
-    window.addEventListener('scroll', function () {
-    windowY = window.pageYOffset;
-    for (var i = 0; i < fadeConts.length; i++) {
-    if(windowY > fadeContsTop[i] - windowH + remainder) {
-      fadeConts[i].classList.add('show');
-    } else {
-      fadeConts[i].classList.remove('show');
-    }}});
-    document.addEventListener('DOMContentLoaded', (event) => {
-    const colors = [
-    { name: 'ラブライブ', value: '#ff007f' },
-    { name: 'サンシャイン', value: '#00bfff' },
-    { name: '虹ヶ咲', value: '#ffcc00' },
-    { name: 'スーパースター', value: '#cc99ff' },
-    { name: '蓮ノ空', value: '#ffc0cb' },
-    { name: 'イキヅライブ', value: '#008bc2' },
-    { name: 'スクミュ', value: '#d70035' }
-    ];
-    const randomIndex = Math.floor(Math.random() * colors.length);
-    const selectedColor = colors[randomIndex];
-    document.body.style.backgroundColor = selectedColor.value;
-    document.getElementById('colorName').textContent = `選ばれた色: ${selectedColor.name}`;
-        });
-    </script>
+   <script src="script.js"></script>
     </body>
     </html>

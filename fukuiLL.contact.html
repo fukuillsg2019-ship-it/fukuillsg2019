@@ -63,81 +63,24 @@
     </p></div>
     <div class="fadeConts" style="margin-bottom: 20px;">
     <h2 style="text-align:center; padding:20px">部室は課外活動共用棟3階<br class="sp-br">一番窓側</h2>
-    <h2 style="text-align:center; padding:20px">連絡は<br class="sp-br">X(旧Twitter)<br class="sp-br"><a href="https://twitter.com/FukubunLLSG2019"><font color="#000">@FukubunLLSG2019</font></a><br class="sp-br">もしくは<br class="sp-br"><a href="https://twitter.com/FukueiheiLLSG21"><font color="#000">@FukueiheiLLSG21</font></a><br class="sp-br">にお願いします！！</h2>
+    <h2 style="text-align:center; padding:20px">連絡は<br class="sp-br">X(旧Twitter)<br class="sp-br">にお願いします！！</h2>
+    <div class="not_test sns-container"> <div class="sns-item">
+    <a href="https://x.com/FukubunLLSG2019">
+    <img src="X.png" alt="ツイッターへ" width="50" height="50">
+    </a>
+    <p style="color:#fff">文京・工大</p>
+    </div>
+    <div class="sns-item">
+    <a href="https://x.com/FukueiheijiLLSG21">
+    <img src="X.png" alt="ツイッターへ" width="50" height="50">
+    </a>
+    <p style="color:#fff">松岡・県大</p>
+    </div>
     </div>
     <a class="pagetop" href="#"><div class="pagetop__arrow"></div></a>
   <footer style="padding-top:20px; text-align:center">
     <p style="color:#fff">by Fukui University LL study group</p>
   </footer>
-    <script>
-    function toggleMenu() {
-      const menu = document.getElementById('menu');
-      const trigger = document.querySelector('.hamburger');
-      menu.classList.toggle('open');
-      trigger.classList.toggle('open');
-    }
-    var slideConts = document.querySelectorAll('.slideConts'); 
-    var slideContsRect = []; 
-    var slideContsTop = []; 
-    var windowY = window.pageYOffset; 
-    var windowH = window.innerHeight; 
-    var remainder = 100; 
-    for (var i = 0; i < slideConts.length; i++) {
-    slideContsRect.push(slideConts[i].getBoundingClientRect());
-    }
-    for (var i = 0; i < slideContsRect.length; i++) {
-    slideContsTop.push(slideContsRect[i].top + windowY);
-    }
-    window.addEventListener('resize', function () {
-    windowH = window.innerHeight;
-    });
-    window.addEventListener('scroll', function () {
-    windowY = window.pageYOffset;
-    for (var i = 0; i < slideConts.length; i++) {
-    if(windowY > slideContsTop[i] - windowH + remainder) {
-      slideConts[i].classList.add('show');
-    } else {
-      slideConts[i].classList.remove('show');
-    }
-    }});
-    var fadeConts = document.querySelectorAll('.fadeConts');
-    var fadeContsRect = [];
-    var fadeContsTop = [];
-    var windowY = window.pageYOffset;
-    var windowH = window.innerHeight;
-    var remainder = 100; 
-    for (var i = 0; i < fadeConts.length; i++) {
-    fadeContsRect.push(fadeConts[i].getBoundingClientRect());
-    }
-    for (var i = 0; i < fadeContsRect.length; i++) {
-    fadeContsTop.push(fadeContsRect[i].top + windowY);
-    }
-    window.addEventListener('resize', function () {
-    windowH = window.innerHeight;
-    });
-    window.addEventListener('scroll', function () {
-    windowY = window.pageYOffset;
-    for (var i = 0; i < fadeConts.length; i++) {
-    if(windowY > fadeContsTop[i] - windowH + remainder) {
-      fadeConts[i].classList.add('show');
-    } else {
-      fadeConts[i].classList.remove('show');
-    }}});
-    document.addEventListener('DOMContentLoaded', (event) => {
-    const colors = [
-    { name: 'ラブライブ', value: '#ff007f' },
-    { name: 'サンシャイン', value: '#00bfff' },
-    { name: '虹ヶ咲', value: '#ffcc00' },
-    { name: 'スーパースター', value: '#cc99ff' },
-    { name: '蓮ノ空', value: '#ffc0cb' },
-    { name: 'イキヅライブ', value: '#008bc2' },
-    { name: 'スクミュ', value: '#d70035' }
-    ];
-    const randomIndex = Math.floor(Math.random() * colors.length);
-    const selectedColor = colors[randomIndex];
-    document.body.style.backgroundColor = selectedColor.value;
-    document.getElementById('colorName').textContent = `選ばれた色: ${selectedColor.name}`;
-        });
-    </script>
+    <script src="script.js"></script>
     </body>
     </html>

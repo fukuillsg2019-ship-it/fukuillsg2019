@@ -57,9 +57,9 @@
     slideConts" style="margin-bottom: 20px;">  
   <h2 style="text-align:center; padding:20px">MEMBER</h2>
   </div>
-  <div style="background-color:#00bfff; padding:20px; text-align:center">
   <div class="slideContsR
-  slideConts">  
+  slideConts" style="margin-bottom: 20px;"> 
+  <div style="background-color:#00bfff; padding:20px; text-align:center"> 
       <h2>Master 2nd</h2>
   </div>
   </div>
@@ -112,7 +112,7 @@
       <h2>ずらまる</h2>
         <h3 style="margin-bottom: 20px;">バドミントンがうますぎる人<br>最近はバドミントンだけで<br class="sp-br">ライブに行けてない<br>推し：国木田花丸</h3>
       <h2>ありもと</h2>
-        <h3 style="margin-bottom: 20px;">大学からラブライブ！を見始めた人<br>とりあえず愛さんを愛さんと！<br>推し：宮下愛</h3>
+        <h3>大学からラブライブ！を見始めた人<br>とりあえず愛さんを愛さんと！<br>推し：宮下愛</h3>
       <h2>あっき～</h2>
         <h3 style="margin-bottom: 20px;">旅人<br>ウェンティに脳を焼かれてる<br>推し：天王寺璃奈</h3>
       <h2>にっし～</h2>
@@ -184,78 +184,6 @@
   <footer style="padding-top:20px; text-align:center">
     <p style="color:#fff">by Fukui University LL study group</p>
   </footer>
-    <script>
-    function toggleMenu() {
-      const menu = document.getElementById('menu');
-      const trigger = document.querySelector('.hamburger');
-      menu.classList.toggle('open');
-      trigger.classList.toggle('open');
-    }
-    var slideConts = document.querySelectorAll('.slideConts'); 
-    var slideContsRect = []; 
-    var slideContsTop = []; 
-    var windowY = window.pageYOffset; 
-    var windowH = window.innerHeight; 
-    var remainder = 100; 
-    for (var i = 0; i < slideConts.length; i++) {
-    slideContsRect.push(slideConts[i].getBoundingClientRect());
-    }
-    for (var i = 0; i < slideContsRect.length; i++) {
-    slideContsTop.push(slideContsRect[i].top + windowY);
-    }
-    window.addEventListener('resize', function () {
-    windowH = window.innerHeight;
-    });
-    window.addEventListener('scroll', function () {
-    windowY = window.pageYOffset;
-    for (var i = 0; i < slideConts.length; i++) {
-    if(windowY > slideContsTop[i] - windowH + remainder) {
-      slideConts[i].classList.add('show');
-    } else {
-      slideConts[i].classList.remove('show');
-    }
-    }});
-    var fadeConts = document.querySelectorAll('.fadeConts');
-    var fadeContsRect = [];
-    var fadeContsTop = [];
-    var windowY = window.pageYOffset;
-    var windowH = window.innerHeight;
-    var remainder = 100; 
-    for (var i = 0; i < fadeConts.length; i++) {
-    fadeContsRect.push(fadeConts[i].getBoundingClientRect());
-    }
-    for (var i = 0; i < fadeContsRect.length; i++) {
-    fadeContsTop.push(fadeContsRect[i].top + windowY);
-    }
-    window.addEventListener('resize', function () {
-    windowH = window.innerHeight;
-    });
-    window.addEventListener('scroll', function () {
-    windowY = window.pageYOffset;
-    for (var i = 0; i < fadeConts.length; i++) {
-    if(windowY > fadeContsTop[i] - windowH + remainder) {
-      fadeConts[i].classList.add('show');
-    } else {
-      fadeConts[i].classList.remove('show');
-    }}});
-    document.addEventListener('DOMContentLoaded', (event) => {
-    const colors = [
-    { name: 'ラブライブ', value: '#ff007f' },
-    { name: 'サンシャイン', value: '#00bfff' },
-    { name: '虹ヶ咲', value: '#ffcc00' },
-    { name: 'スーパースター', value: '#cc99ff' },
-    { name: '蓮ノ空', value: '#ffc0cb' },
-    { name: 'イキヅライブ', value: '#008bc2' },
-    { name: 'スクミュ', value: '#d70035' }
-    ];
-    const randomIndex = Math.floor(Math.random() * colors.length);
-    const selectedColor = colors[randomIndex];
-    document.body.style.backgroundColor = selectedColor.value;
-    document.getElementById('colorName').textContent = `選ばれた色: ${selectedColor.name}`;
-        });
-    </script>
+    <script src="script.js"></script>
     </body>
-
     </html>
-
-
