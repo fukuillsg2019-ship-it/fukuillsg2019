@@ -7,7 +7,6 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Helvetica Neue", "Helvetica", "Hiragino Sans", "Arial", "Yu Gothic", "Meiryo", sans-serif;
-    background-color: #fff;
     overflow-x: hidden;
     font-size: 16px;
     line-height: 1.6; 
@@ -29,9 +28,10 @@ h1 {
     margin: 0; padding: 0;
     font-size: 25px;
     }
+
 a {
     text-decoration: none;
-    color: #fff;   
+    color: #000; 
 }
     
 ul {
@@ -396,7 +396,6 @@ header,h2,h3,p,footer {
     margin: 0;
     transition: background-color 0.5s ease;
     font-family: sans-serif;
-    color: white;
     }
 
 h4 {
@@ -407,8 +406,8 @@ h4 {
     margin: 0;
     transition: background-color 0.5s ease;
     font-family: sans-serif;
-    color: white;
 }
+
     /* --- 砂時計コンテナ --- */
 .hourglass-container {
     position: relative;
@@ -587,7 +586,7 @@ h4 {
 @media screen and (max-width: 768px) {
 
     /* ヘッダーを常に表示して背景を確保 */
-    header {
+header {
         position: fixed;
         top: 0;
         left: 0;
@@ -599,13 +598,13 @@ h4 {
     }
 
     /* ページ内容がヘッダーの裏に入らないように余白を付ける */
-    #wrap {
+#wrap {
         padding-top: 120px;   /* ← ヘッダーの高さ分を追加（超重要） */
         overflow: visible;   /* ← メニューがはみ出してもOKにする */
     }
 
     /* メニュー：ヘッダーの下から全画面表示 */
-    .menu {
+.menu {
         position: fixed;
         top: 120px;                     /* ← ヘッダーの真下から開始 */
         left: 0;
@@ -625,17 +624,27 @@ h4 {
         transition: all 0.25s ease;
     }
 
-    .menu.open {
+.menu.open {
         opacity: 1;
         visibility: visible;
         transform: translateY(0);
     }
 
     /* メニュー項目の見た目調整 */
-    .menu__item {
+.menu__item {
         display: flex;
         align-items: center;
         gap: 14px;
         padding: 18px 10px;
     }
+}
+
+.colorize {
+    filter: brightness(0) invert(1); 
+    transition: filter 0.3s ease;
+}
+
+.icon-img {
+    filter: brightness(0) invert(1); 
+    transition: filter 0.4s;
 }
