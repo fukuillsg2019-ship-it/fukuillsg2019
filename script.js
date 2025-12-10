@@ -88,6 +88,7 @@
     a.style.color = linkColor;
     });
     document.body.style.color = textColor;
+    document.querySelector('.menu').style.backgroundColor = selectedColor.value;
     document.querySelector('.menu').style.color = textColor;
     document.querySelectorAll('.menu__item .text').forEach(item => {
         item.style.color = textColor;
