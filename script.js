@@ -66,3 +66,11 @@
     document.body.style.backgroundColor = selectedColor.value;
     document.getElementById('colorName').textContent = `選ばれた色: ${selectedColor.name}`;
         });
+    window.addEventListener('load', () => {
+    const loader = document.getElementById('loader');
+    loader.classList.add('loaded');
+    loader.classList.add('slide-up');
+    setTimeout(() => {
+        loader.style.display = 'none';
+    }, 1200);
+        });
