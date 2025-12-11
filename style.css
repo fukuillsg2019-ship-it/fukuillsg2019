@@ -14,24 +14,31 @@ body {
 }
     
 header {
-    position: relative; 
-    padding: 30px 4% 10px;
+    position: relative;      
     top: 0;
-    width: auto;
+    left: 0;
+    width: 100%;
+    height: auto;      /* ← スタイリッシュな高さ */
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-}
+    background-color: inherit; /* ← 背景色ランダム設定に追従 */
+    z-index: 200000;
+    margin: 0;
+    transition: background-color 0.5s ease;
+    font-family: sans-serif;
+    text-align: center; 
+    padding: 0px;
+    }
+
     
 h1 {
     margin: 0; padding: 0;
-    font-size: 25px;
+    font-size: 30px;
     }
 
 a {
     text-decoration: none;
-    color: #000; 
 }
     
 ul {
@@ -39,10 +46,7 @@ ul {
     margin: 0;
     display: flex;
 }
-    
-nav {
-    margin: 0 0 0 auto;
-}
+
     
 li {
     list-style: none;
@@ -112,7 +116,7 @@ li {
     border-radius: 8px;
     opacity: 0;
     visibility: hidden;
-    transform: translateY(0); /* ← 重要！ズレ防止 */
+    transform: translateY(0);
     transition: opacity 0.3s ease;
     z-index: 100001;
 }
@@ -269,12 +273,18 @@ h1 {
 table {
     width: 80%; 
     border-collapse: collapse;
+    width: "700" ;
+    align-self: center;
+    align-items: center;
+    margin: 0 auto;
 }
 
 th, td {
     padding: 8px 12px;
     border: 1px solid #fff;
     white-space: nowrap;
+    align-items: center;
+    text-align: center;
 }
 
 .relative{
@@ -325,6 +335,7 @@ th, td {
     width: 100%;
     padding-top: 68.04%;
     position: relative; 
+    margin-bottom: 60px;
 }
 
 .full-width-img {
@@ -346,6 +357,15 @@ th, td {
     z-index: 10;
 }
 
+.absolute03 {
+    top: 100%;
+    left: 100%;
+    transform: translate(0%,-50%);
+    margin:0;
+    padding:0;
+    color: #000000;
+  }
+
 #ban {
     filter: brightness(0) saturate(100%) invert(13%) sepia(77%) saturate(7432%) hue-rotate(330deg) brightness(121%) contrast(104%);
 }
@@ -364,6 +384,7 @@ th, td {
     -webkit-transition: .5s;
     -o-transition: .5s;
     transition: .5s;
+    margin-bottom: 20px
 }
 
 .slideContsR {
@@ -376,19 +397,22 @@ th, td {
 }
     
 .fadeConts {
-     width: auto;
-     height: auto;
+    width: auto;
+    height: auto;
     margin: auto auto;
     opacity: 0;
     -webkit-transition: .5s;
     -o-transition: .5s;
     transition: .5s;
+    margin-bottom: 20px;
+    align-items: center;
     }
+
 .fadeConts.show {
     opacity: 1;
 }
 
-header,h2,h3,p,footer {
+h1,h2,h3,p,footer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -396,6 +420,9 @@ header,h2,h3,p,footer {
     margin: 0;
     transition: background-color 0.5s ease;
     font-family: sans-serif;
+    text-align: center; 
+    padding: 20px;
+    margin-bottom: 20px;
     }
 
 h4 {
@@ -403,7 +430,7 @@ h4 {
     justify-content: right;
     align-items: right;
     height: auto;
-    margin: 0;
+    margin: 5px;
     transition: background-color 0.5s ease;
     font-family: sans-serif;
 }
@@ -592,7 +619,7 @@ header {
         left: 0;
         width: 100%;
         height: 120px;   
-        padding: 0 20px;            /* ← スマホでの実ヘッダー高さ */
+        padding: 0px 20px;            /* ← スマホでの実ヘッダー高さ */
         z-index: 200000;
     }
 
@@ -648,4 +675,18 @@ header {
 .icon-img {
     filter: brightness(0) invert(1); 
     transition: filter 0.4s;
+}
+
+.bachelorsecret {
+    display: none !important;
+}
+
+.back1color,.back2color,.back3color,.back4color {
+    padding:20px; 
+    text-align:center;
+    margin-bottom: 20px
+}
+
+.BAN10 {
+    color: #ff007f;
 }

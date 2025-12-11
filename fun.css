@@ -92,12 +92,12 @@
 
 /* 上の砂（青）のマスク */
 .mask-top {
-    animation: sand-drop-top 24000s linear infinite;
+    animation: sand-drop-top 22500s linear infinite;
 }
 
 /* 下の砂（赤）のマスク */
 .mask-bottom {
-    animation: sand-fill-bottom 24000s linear infinite;
+    animation: sand-fill-bottom 22500s linear infinite;
 }
 
 
@@ -178,4 +178,54 @@
     letter-spacing: 2px;
     display: inline-block;
     margin-top: 20px;
+}
+
+/* ボタン自体（左上） */
+.back-button {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    width: 55px;   /* ← 小さくした */
+    height: 55px;
+    z-index: 10000;
+    cursor: pointer;
+}
+
+/* ホバーでふわっと拡大するだけ（回転なし） */
+.swing-icon {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+    filter: drop-shadow(0 0 5px rgba(0,0,0,0.4));
+}
+
+.back-button:hover .swing-icon {
+    transform: scale(1.18);
+}
+
+/* PERFECT（白＋虹色縁取り・中央表示） */
+.perfect-text {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0;
+
+    font-family: 'Arial Black', sans-serif;
+    font-size: 60px;
+    font-weight: 900;
+    letter-spacing: 4px;
+
+    color: #ffffff;
+
+    /* 縁を虹色風にしたグラデ */
+    text-shadow:
+        0 0 6px #fff,
+        0 0 12px #fff,
+        0 -2px 8px #ff4444,   /* 上：赤 */
+        0 2px 8px #8a2be2;    /* 下：紫 */
+
+    z-index: 20000;
+    transition: opacity 0.45s ease, transform 0.45s ease;
+    pointer-events: none;
 }

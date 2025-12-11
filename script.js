@@ -11,21 +11,24 @@ function toggleMenu() {
 /* =============================
    スクロールアニメーション
 ============================= */
-var slideConts = document.querySelectorAll('.slideConts'); 
-var slideContsRect = []; 
-var slideContsTop = []; 
-var windowY = window.pageYOffset; 
-var windowH = window.innerHeight; 
-var remainder = 100; 
+var slideConts = document.querySelectorAll('.slideConts');
+var slideContsRect = [];
+var slideContsTop = [];
+var windowY = window.pageYOffset;
+var windowH = window.innerHeight;
+var remainder = 100;
+
 for (var i = 0; i < slideConts.length; i++) {
     slideContsRect.push(slideConts[i].getBoundingClientRect());
     slideContsTop.push(slideContsRect[i].top + windowY);
 }
+
 window.addEventListener('resize', () => windowH = window.innerHeight);
+
 window.addEventListener('scroll', () => {
     windowY = window.pageYOffset;
     for (var i = 0; i < slideConts.length; i++) {
-        if(windowY > slideContsTop[i] - windowH + remainder) {
+        if (windowY > slideContsTop[i] - windowH + remainder) {
             slideConts[i].classList.add('show');
         } else {
             slideConts[i].classList.remove('show');
@@ -33,17 +36,22 @@ window.addEventListener('scroll', () => {
     }
 });
 
+
+/* fade animation --------------------------- */
+
 var fadeConts = document.querySelectorAll('.fadeConts');
 var fadeContsRect = [];
 var fadeContsTop = [];
+
 for (var i = 0; i < fadeConts.length; i++) {
     fadeContsRect.push(fadeConts[i].getBoundingClientRect());
     fadeContsTop.push(fadeContsRect[i].top + windowY);
 }
+
 window.addEventListener('scroll', () => {
     windowY = window.pageYOffset;
     for (var i = 0; i < fadeConts.length; i++) {
-        if(windowY > fadeContsTop[i] - windowH + remainder) {
+        if (windowY > fadeContsTop[i] - windowH + remainder) {
             fadeConts[i].classList.add('show');
         } else {
             fadeConts[i].classList.remove('show');
@@ -51,21 +59,15 @@ window.addEventListener('scroll', () => {
     }
 });
 
-/* ======================================
-   アイコンを本文色と完全一致で染める
-====================================== */
-function generateAccurateFilter(hex) {
-    const r = parseInt(hex.substr(1,2),16);
-    const g = parseInt(hex.substr(3,2),16);
-    const b = parseInt(hex.substr(5,2),16);
-    return `brightness(0) invert(1) drop-shadow(0 0 0 rgb(${r}, ${g}, ${b}))`;
-}
 
 /* ======================================
-   背景色・本文色・アイコン色の統一処理
+   背景色・本文色・リンク色・刺し色の設定
 ====================================== */
 document.addEventListener('DOMContentLoaded', () => {
 
+    // ----------------------------  
+    // 色設定データ
+    // ----------------------------
     const colors = [
         { name: 'ラブライブ', value: '#ff007f' },
         { name: 'サンシャイン', value: '#00bfff' },
@@ -96,36 +98,129 @@ document.addEventListener('DOMContentLoaded', () => {
         "#d70035": "#ffffff"
     };
 
+    const back1ColorMap = {
+        "#ff007f": "#008bc2",
+        "#00bfff": "#cc99ff",
+        "#ffcc00": "#ffc0cb",
+        "#cc99ff": "#008bc2",
+        "#ffc0cb": "#00bfff",
+        "#008bc2": "#cc99ff",
+        "#d70035": "#00bfff"
+    };
+
+    const back2ColorMap = {
+        "#ff007f": "#cc99ff",
+        "#00bfff": "#ffc0cb",
+        "#ffcc00": "#008bc2",
+        "#cc99ff": "#00bfff",
+        "#ffc0cb": "#cc99ff",
+        "#008bc2": "#ffc0cb",
+        "#d70035": "#008bc2"
+    };
+
+    const back3ColorMap = {
+        "#ff007f": "#00bfff",
+        "#00bfff": "#008bc2",
+        "#ffcc00": "#cc99ff",
+        "#cc99ff": "#ffc0cb",
+        "#ffc0cb": "#008bc2",
+        "#008bc2": "#00bfff",
+        "#d70035": "#ffc0cb"
+    };
+
+
+    // ----------------------------  
+    // ランダム背景色決定
+    // ----------------------------
     const selected = colors[Math.floor(Math.random() * colors.length)];
     const bgColor = selected.value;
 
+    // 背景色反映
     document.body.style.backgroundColor = bgColor;
     document.querySelector('header').style.backgroundColor = bgColor;
     document.querySelector('.menu').style.backgroundColor = bgColor;
 
+    // 本文色
     const textColor = textColorMap[bgColor];
     document.body.style.color = textColor;
     document.querySelector('.menu').style.color = textColor;
 
-    document.querySelectorAll('.menu__item .text').forEach(t => t.style.color = textColor);
-
-    const iconFilter = generateAccurateFilter(textColor);
-    document.querySelectorAll('.colorize').forEach(img => {
-        img.style.filter = iconFilter;
-    });
-
+    // リンク色
     const linkColor = linkColorMap[bgColor];
     document.querySelectorAll('a').forEach(a => {
-        if (a.querySelector('img')) return;
+        if (!a.closest('.BAN10') && !a.closest('.menu')) {
         a.style.color = linkColor;
+    }
     });
 
-    document.getElementById('colorName').textContent = `選ばれた色: ${selected.name}`;
-});
+    /* ------------------------------------
+       back1 / back2 / back3 色の適用
+    ------------------------------------ */
+    const back1Color = back1ColorMap[bgColor];
+    const back2Color = back2ColorMap[bgColor];
+    const back3Color = back3ColorMap[bgColor];
 
-/* ======================================
+    document.querySelectorAll('.back1color').forEach(el => {
+        el.style.backgroundColor = back1Color;
+    });
+
+    document.querySelectorAll('.back2color').forEach(el => {
+        el.style.backgroundColor = back2Color;
+    });
+
+    document.querySelectorAll('.back3color').forEach(el => {
+        el.style.backgroundColor = back3Color;
+    });
+
+    document.querySelectorAll('.back3color').forEach(el => {
+    el.style.backgroundColor = back3Color;
+    });
+
+    const backCandidates = ['#00bfff', '#ffc0cb', '#cc99ff'];
+
+
+    let usableForBack4;
+
+    if (backCandidates.includes(bgColor)) {
+    usableForBack4 = backCandidates.filter(c => c !== bgColor);
+    } else {
+    usableForBack4 = [...backCandidates]; // 全部使う
+    }
+
+    const back4Color = usableForBack4[
+    Math.floor(Math.random() * usableForBack4.length)
+    ];
+
+    document.querySelectorAll('.back4color').forEach(el => {
+    el.style.backgroundColor = back4Color;
+    });
+
+    let usableForBack5 = usableForBack4.filter(c => c !== back4Color);
+
+    let back5Color;
+
+    if (usableForBack5.length === 1) {
+
+    back5Color = usableForBack5[0];
+    } else {
+
+    back5Color = usableForBack5[
+        Math.floor(Math.random() * usableForBack5.length)
+    ];
+    }
+
+    document.querySelectorAll('.back5color').forEach(el => {
+    el.style.backgroundColor = back5Color;
+    });
+    document.getElementById('colorName').textContent =
+        `選ばれた色: ${selected.name}`;
+    });
+
+
+
+/* =============================
    ローディング演出
-====================================== */
+============================= */
 window.addEventListener('load', () => {
     const loader = document.getElementById('loader');
     loader.classList.add('loaded');
@@ -133,22 +228,23 @@ window.addEventListener('load', () => {
     setTimeout(() => { loader.style.display = 'none'; }, 1200);
 });
 
+
+/* =============================
+   秘密ページ遷移（5回クリック）
+============================= */
 let tapCount = 0;
 let tapTimer = null;
 
 function secretTrigger() {
-    // 5回タップ／クリックで秘密ページへ
     tapCount++;
-    
+
     if (tapCount >= 5) {
-        window.location.href = "fun.html";  // ← あなたの秘密ページ
+        window.location.href = "fun.html";
     }
 
-    // タップ間隔が長い場合はリセット（1秒以内）
     clearTimeout(tapTimer);
     tapTimer = setTimeout(() => tapCount = 0, 1000);
 }
 
-// PCクリック & スマホタップ両対応
 window.addEventListener("click", secretTrigger);
 window.addEventListener("touchstart", secretTrigger);
