@@ -1,5 +1,5 @@
 /* ------------------------------------
-   初回訪問からのカウントアップタイマー
+   カウントアップタイマー
 ------------------------------------- */
 function startPersistentCountUp() {
     let startDate = localStorage.getItem("siteStartDate");
@@ -37,25 +37,20 @@ function startPersistentCountUp() {
     setInterval(updateTimer, 1000);
 }
 
-
-/* ============================================================
-    ▼ ここから追加：砂時計アニメの進行位置を再現する処理
-   ============================================================ */
+/* ------------------------------------
+   砂時計アニメ同期処理
+------------------------------------- */
 function syncHourglassAnimation() {
-
     const startIso = localStorage.getItem("siteStartDate");
-    if (!startIso) return; // カウントタイマーが作ってくれるので基本ここには来ない
+    if (!startIso) return;
 
     const start = new Date(startIso).getTime();
     const now = Date.now();
     const elapsedSec = Math.floor((now - start) / 1000);
 
-    // 砂時計の1サイクル（往復）＝ 3時間 + 3時間 = 6時間 = 21600秒
     const cycle = 21600;
+    const phase = elapsedSec % cycle;
 
-    const phase = elapsedSec % cycle; // 今周期の進行位置
-
-    // CSSのアニメーション対象
     const container = document.querySelector('.hourglass-container');
     const maskTop = document.querySelector('.mask-top');
     const maskBottom = document.querySelector('.mask-bottom');
@@ -65,18 +60,24 @@ function syncHourglassAnimation() {
     if (maskBottom)  maskBottom.style.animationDelay = `-${phase}s`;
 }
 
+/* ------------------------------------
+   ランダム色セット
+------------------------------------- */
+function setRandomButtonColor() {
+    const colors = ["blue", "green", "red"];
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+
+    document.getElementById("back-btn").dataset.color = randomColor;
+}
 
 /* ------------------------------------
-   ページを開いた瞬間にカウント開始 + 砂時計同期
+   ロード時処理
 ------------------------------------- */
 window.onload = function () {
-    startPersistentCountUp();   // ← いつものカウントアップ
-    syncHourglassAnimation();   // ← 追加：砂時計のアニメ位置を再現
-};
 
-window.onload = function () {
     startPersistentCountUp();
     syncHourglassAnimation();
+    setRandomButtonColor();   // ★ランダム色
 
     const btn = document.getElementById("back-btn");
     const icon = document.getElementById("swing-icon");
@@ -84,17 +85,14 @@ window.onload = function () {
 
     btn.addEventListener("click", function () {
 
-        /* --- アイコンを縮小しながら消す --- */
         icon.style.opacity = 0;
         icon.style.transform = "scale(0.4)";
 
-        /* --- PERFECT を中央へフェードイン --- */
         setTimeout(() => {
             perfect.style.opacity = 1;
             perfect.style.transform = "translate(-50%, -50%) scale(1)";
         }, 150);
 
-        /* --- 少し遅らせてページ遷移 --- */
         setTimeout(() => {
             window.location.href = "index.html";
         }, 1100);

@@ -180,18 +180,18 @@
     margin-top: 20px;
 }
 
-/* ボタン自体（左上） */
+/* 戻るボタン */
 .back-button {
     position: fixed;
     top: 15px;
     left: 15px;
-    width: 55px;   /* ← 小さくした */
+    width: 55px;
     height: 55px;
     z-index: 10000;
     cursor: pointer;
 }
 
-/* ホバーでふわっと拡大するだけ（回転なし） */
+/* ホバーでふわっと拡大 */
 .swing-icon {
     width: 100%;
     height: 100%;
@@ -203,7 +203,34 @@
     transform: scale(1.18);
 }
 
-/* PERFECT（白＋虹色縁取り・中央表示） */
+/* SVG の共通 */
+.color-icon .arrow {
+    fill: none;
+    stroke: white;
+    stroke-width: 14;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.color-icon .ring {
+    fill: none;
+    stroke-width: 10;
+}
+
+/* ランダム 3 色 */
+[data-color="blue"] .ring {
+    stroke: url(#gradBlue);
+}
+
+[data-color="green"] .ring {
+    stroke: url(#gradGreen);
+}
+
+[data-color="red"] .ring {
+    stroke: url(#gradRed);
+}
+
+/* PERFECT アニメ */
 .perfect-text {
     position: fixed;
     top: 50%;
@@ -217,15 +244,61 @@
     letter-spacing: 4px;
 
     color: #ffffff;
-
-    /* 縁を虹色風にしたグラデ */
     text-shadow:
         0 0 6px #fff,
         0 0 12px #fff,
-        0 -2px 8px #ff4444,   /* 上：赤 */
-        0 2px 8px #8a2be2;    /* 下：紫 */
+        0 -2px 8px #ff4444,
+        0 2px 8px #8a2be2;
 
     z-index: 20000;
     transition: opacity 0.45s ease, transform 0.45s ease;
     pointer-events: none;
+}
+
+/* === スマホ（max-width:600px）向け：確実に反映させる決定版 === */
+@media screen and (max-width: 600px) {
+
+  /* まず center-wrapper が画面を覆って赤が見えない問題を解消する
+     → スマホ時だけ透過にして body 背景（または別色）が見えるようにする */
+  .center-wrapper {
+    background: transparent !important;
+  }
+
+  /* body 背景（スマホ時の背景色をここで決める）*/
+  body {
+    background: #008b8b; /* 必要なら他の色に変えてOK */
+  }
+
+  /* 砂時計を大きく（中央に見えるよう余白も調整） */
+  .hourglass-container {
+    transform: scale(1.0) !important;
+    transform-origin: center;
+  }
+
+  /* デジタル時計を大きく */
+  #countup-timer {
+    font-size: 5vw !important;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-top: 18px;
+  }
+
+  /* 戻るボタンを大きく・押しやすく */
+  .back-button {
+    width: 60px !important;
+    height: 60px !important;
+    top: 14px;
+    left: 14px;
+    z-index: 10001;
+  }
+
+  .back-button .swing-icon {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* PERFECT 表示を大きめに */
+  .perfect-text {
+    font-size: 12vw !important;
+  }
 }

@@ -198,9 +198,34 @@
         <h3>パパ<br>虹ヶ咲ならどこでも顔を出してくれる<br>推し：中須かすみ</h3>
     </div>
 </div>
-<a class="pagetop" href="#"><div class="pagetop__arrow"></div></a>
-<footer>by Fukui University LL study group
-</footer>
+<div class="pagetop" id="pagetop-btn" data-color="blue">
+  <svg viewBox="0 0 100 100" class="pagetop-icon color-icon">
+    <circle cx="50" cy="50" r="43" class="ring" />
+    <polyline 
+      points="30,60 50,35 70,60"
+      class="arrow"
+    />
+  </svg>
+</div>
+<footer>by Fukui University LL study group</footer>
 <script src="script.js"></script>
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+      <linearGradient id="gradBlue" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#1c4fd9"/>
+          <stop offset="100%" stop-color="#5aa4ff"/>
+      </linearGradient>
+
+      <linearGradient id="gradGreen" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#00b341"/>
+          <stop offset="100%" stop-color="#4cff99"/>
+      </linearGradient>
+
+      <linearGradient id="gradRed" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#d1002f"/>
+          <stop offset="100%" stop-color="#ff6688"/>
+      </linearGradient>
+  </defs>
+</svg>
 </body>
 </html>

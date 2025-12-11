@@ -36,6 +36,12 @@ window.addEventListener('scroll', () => {
     }
 });
 
+document.getElementById("pagetop-btn").addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
 
 /* fade animation --------------------------- */
 
@@ -248,3 +254,14 @@ function secretTrigger() {
 
 window.addEventListener("click", secretTrigger);
 window.addEventListener("touchstart", secretTrigger);
+
+/* ページトップアイコンの色をランダムに設定 */
+function setRandomPageTopColor() {
+    const colors = ["blue", "green", "red"];
+    const random = colors[Math.floor(Math.random() * colors.length)];
+    document.getElementById("pagetop-btn").dataset.color = random;
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+    setRandomPageTopColor();
+});

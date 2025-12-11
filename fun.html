@@ -2,34 +2,43 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SECRET</title>
     <link rel="stylesheet" href="fun.css" />
 </head>
 <body>
-<a id="back-btn" class="back-button">
-
-    <!-- 小さくしたスイング風アイコン -->
-    <svg id="swing-icon" viewBox="0 0 100 100" class="swing-icon">
-        <circle cx="50" cy="50" r="43"
-            stroke="url(#gradOuter)" stroke-width="10" fill="none" />
+<a id="back-btn" class="back-button" data-color="blue">
+    <svg id="swing-icon" viewBox="0 0 100 100" class="swing-icon color-icon">
+        <circle cx="50" cy="50" r="43" class="ring" />
         <polyline 
             points="60,22 28,50 60,78"
-            fill="none"
-            stroke="white"
-            stroke-width="14"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            class="arrow"
         />
-        <defs>
-            <linearGradient id="gradOuter" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#1c4fd9"/>
-                <stop offset="100%" stop-color="#5aa4ff"/>
-            </linearGradient>
-        </defs>
     </svg>
-    <!-- 中央表示 PERFECT -->
+
     <div id="perfect-text" class="perfect-text">PERFECT</div>
 </a>
+
+<!-- ★グラデ定義（body の一番下に置く） -->
+<svg width="0" height="0" style="position:absolute">
+    <defs>
+        <linearGradient id="gradBlue" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#1c4fd9"/>
+            <stop offset="100%" stop-color="#5aa4ff"/>
+        </linearGradient>
+
+        <linearGradient id="gradGreen" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#00b341"/>
+            <stop offset="100%" stop-color="#4cff99"/>
+        </linearGradient>
+
+        <linearGradient id="gradRed" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#d1002f"/>
+            <stop offset="100%" stop-color="#ff6688"/>
+        </linearGradient>
+    </defs>
+</svg>
+
 
 <div class="center-wrapper full">
     <div class="hourglass-container">
