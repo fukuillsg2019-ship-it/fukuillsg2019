@@ -1,53 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-       <loc>https://fukuillsg2019-ship-it.github.io/fukuillsg2019/</loc>
-       <lastmod>2025-12-09T18:08:37+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>1.0000</priority>
+    <loc>https://fukuillsg2019-ship-it.github.io/fukuillsg2019/</loc>
   </url>
   <url>
-       <loc>https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.about.html</loc>
-       <lastmod>2025-12-09T18:08:37+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.8000</priority>
+    <loc>https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.about.html</loc>
   </url>
   <url>
-       <loc>https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.member.html</loc>
-       <lastmod>2025-12-09T18:08:37+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.8000</priority>
+    <loc>https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.member.html</loc>
   </url>
   <url>
-       <loc>https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.activity.html</loc>
-       <lastmod>2025-12-09T18:08:37+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.8000</priority>
+    <loc>https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.activity.html</loc>
   </url>
   <url>
-       <loc>https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.introduction.html</loc>
-       <lastmod>2025-12-09T18:08:37+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.8000</priority>
+    <loc>https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.introduction.html</loc>
   </url>
   <url>
-       <loc>https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.schedule.html</loc>
-       <lastmod>2025-12-09T18:08:37+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.8000</priority>
+    <loc>https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.schedule.html</loc>
   </url>
   <url>
-       <loc>https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.data.html</loc>
-       <lastmod>2025-12-09T18:08:37+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.8000</priority>
+    <loc>https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.data.html</loc>
   </url>
   <url>
-       <loc>https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.contact.html</loc>
-       <lastmod>2025-12-09T18:08:37+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.8000</priority>
+    <loc>https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fukuiLL.contact.html</loc>
   </url>
 </urlset>
