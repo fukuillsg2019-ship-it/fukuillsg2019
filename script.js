@@ -244,7 +244,7 @@ let tapTimer = null;
 function secretTrigger() {
     tapCount++;
 
-    if (tapCount >= 10) {
+    if (tapCount >= 20) {
         window.location.href = "fun.html";
     }
 
@@ -265,4 +265,5 @@ function setRandomPageTopColor() {
 window.addEventListener("DOMContentLoaded", () => {
     setRandomPageTopColor();
 });
+
 
