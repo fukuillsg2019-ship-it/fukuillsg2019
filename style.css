@@ -1,0 +1,720 @@
+* {
+    box-sizing: border-box;
+    max-width: 100vw;
+}
+    
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica Neue", "Helvetica", "Hiragino Sans", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+    overflow-x: hidden;
+    font-size: 16px;
+    line-height: 1.6; 
+    width: 100%;
+}
+    
+header {
+    position: relative;      
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;      /* ← スタイリッシュな高さ */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: inherit; /* ← 背景色ランダム設定に追従 */
+    z-index: 200000;
+    margin: 0;
+    transition: background-color 0.5s ease;
+    font-family: sans-serif;
+    text-align: center; 
+    padding: 0px;
+    }
+
+    
+h1 {
+    margin: 0; padding: 0;
+    font-size: 30px;
+    }
+
+a {
+    text-decoration: none;
+}
+    
+ul {
+    list-style: none;
+    margin: 0;
+    display: flex;
+}
+
+    
+li {
+    list-style: none;
+    margin: 0 0 0 15px;
+    font-size: 12px;
+}
+    
+.X  {
+    border-spacing: 10px;
+    border: 0px solid #fff;  
+}
+    
+.hamburger {
+    position: absolute; 
+    right: 20px; 
+    top: 50%; 
+    transform: translateY(-50%);
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    z-index: 9999;
+}
+    
+.hamburger__line {
+    position: absolute; 
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 2px;
+    transition: all 300ms ease;
+}
+    
+.hamburger__line:nth-child(1) { 
+    top: 0px; 
+}
+
+.hamburger__line:nth-child(2) { 
+    top: 9px; 
+}
+    
+.hamburger__line:nth-child(3) { 
+    top: 18px; 
+}
+    
+.hamburger.open .hamburger__line:nth-child(1) {
+    top: 9px;
+    transform: rotate(45deg);
+}
+    
+.hamburger.open .hamburger__line:nth-child(2) {
+    opacity: 0;
+}
+    
+.hamburger.open .hamburger__line:nth-child(3) {
+    top: 9px;
+    transform: rotate(-45deg);
+}
+    
+.menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 260px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(6px);
+    border-radius: 8px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(0);
+    transition: opacity 0.3s ease;
+    z-index: 100001;
+}
+
+.menu.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu__item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    font-size: 16px;
+    color: inherit;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #fff;
+    padding: 14px 0;
+    line-height: 1.5;
+}
+    
+.menu__item:last-child {
+    border-bottom: none;
+}
+    
+.icon img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+    
+.slide-top-enter-active,
+.slide-top-leave-active { 
+    transition: all 300ms ease;    
+}
+    
+.slide-top-enter-from,
+.slide-top-leave-to {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+    
+.slide-top-enter-to,
+.slide-top-leave-from {
+    opacity: 1;
+    transform: translateY(0);
+}
+    
+html {
+    scroll-behavior: smooth;
+    width: 100%;
+    overflow-x: hidden;
+}
+    
+.pagetop {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    width: 55px;
+    height: 55px;
+    cursor: pointer;
+    z-index: 9999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ホバー：ふわっと拡大 */
+.pagetop-icon {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+    filter: drop-shadow(0 0 5px rgba(0,0,0,0.4));
+}
+
+.pagetop:hover .pagetop-icon {
+    transform: scale(1.18);
+}
+
+@media (hover: hover) and (pointer: fine) {
+.pagetop:hover, .pagetop:hover .pagetop__arrow {
+        border-color: #ff007f;
+}
+}
+    
+@media (max-width: 414px) {
+body {
+    font-size: 14px;
+    }
+
+h1 {
+    font-size: 24px;
+}
+}
+
+@media screen and (min-width: 768px) {
+.sp-br {
+    display: none;
+}
+
+.table-scroll-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+}
+
+.googleCalendar iframe {
+    width: 100%;
+    height: 400px;
+    }
+@media all and (min-width: 768px) {
+    .googleCalendar iframe {
+    height: 600px;   
+}
+}
+
+.container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.photo-item {
+    width: 300px;
+}
+    
+.photo-item img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media (max-width: 768px) {
+
+    .container {
+    flex-direction: column;
+    align-items: center;
+}
+
+.photo-item {
+    width: 100%;
+    max-width: 100%; 
+    margin-bottom: 10px;
+}
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    border: none; 
+}
+
+table {
+    width: 80%; 
+    border-collapse: collapse;
+    width: "700" ;
+    align-self: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+th, td {
+    padding: 8px 12px;
+    border: 1px solid #fff;
+    white-space: nowrap;
+    align-items: center;
+    text-align: center;
+}
+
+.relative{
+    position:relative ;
+    width: 100%;
+    height: auto
+}
+
+#no_table {
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#no_table td {
+    text-align: center;
+    padding: 10px 15px;
+}
+
+.sns-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 10px 0;
+}
+
+.sns-item {
+    text-align: center;
+    min-width: 80px;
+    flex: 1 1 auto;
+}
+
+@media (max-width: 600px) {  
+.sns-container {
+    flex-wrap: wrap;
+    max-width: 400px;
+    margin: auto;
+}
+
+.sns-item {
+    width: calc(50% - 20px);
+    min-width: unset;
+}
+}
+
+.photo-overlay-container {
+    width: 100%;
+    padding-top: 68.04%;
+    position: relative; 
+    margin-bottom: 60px;
+}
+
+.full-width-img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}
+
+.absolute02 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 60%;
+    height: auto;
+    z-index: 10;
+}
+
+.absolute03 {
+    top: 100%;
+    left: 100%;
+    transform: translate(0%,-50%);
+    margin:0;
+    padding:0;
+    color: #000000;
+  }
+
+#ban {
+    filter: brightness(0) saturate(100%) invert(13%) sepia(77%) saturate(7432%) hue-rotate(330deg) brightness(121%) contrast(104%);
+}
+
+#wrap {
+    position: relative;
+    overflow: visible;
+    width: 100%;
+    margin: 0 auto;    
+}
+
+.slideConts {
+    width: 100%;
+    height: auto;
+    margin: auto auto;
+    -webkit-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+    margin-bottom: 20px
+}
+
+.slideContsR {
+    transform: translate(100%, 0);    
+}
+
+.slideContsR.show {
+    transform: translate(0, 0)
+    !important;    
+}
+    
+.fadeConts {
+    width: auto;
+    height: auto;
+    margin: auto auto;
+    opacity: 0;
+    -webkit-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+    margin-bottom: 20px;
+    align-items: center;
+    }
+
+.fadeConts.show {
+    opacity: 1;
+}
+
+h1,h2,h3,p,footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    margin: 0;
+    transition: background-color 0.5s ease;
+    font-family: sans-serif;
+    text-align: center; 
+    padding: 20px;
+    margin-bottom: 20px;
+    }
+
+h4 {
+    display: flex;
+    justify-content: right;
+    align-items: right;
+    height: auto;
+    margin: 5px;
+    transition: background-color 0.5s ease;
+    font-family: sans-serif;
+}
+
+    /* --- 砂時計コンテナ --- */
+.hourglass-container {
+    position: relative;
+    width: 90px;      /* ← 小さくして可愛いサイズ感 */
+    height: 140px;    /* ← 比率そのまま小型化 */
+    animation: rotate-hourglass 30s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+/* --- 共通画像のスタイル --- */
+.hourglass-frame, .sand-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- 1. 枠線 (一番手前に表示) --- */
+.hourglass-frame {
+    z-index: 10;
+    pointer-events: none;
+}
+
+/* --- 2. 砂 (中身) の制御 --- */
+.sand-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%; /* 上半分 */
+    overflow: hidden;
+    z-index: 1;
+    display: flex;
+    justify-content: center; /* ← 中央寄せを補強 */
+}
+
+.sand-top img {
+    width: auto;        /* ← これが最重要！横幅の強制フィットを解除 */
+    height: 200%;       
+    max-width: none;    /* ← ブラウザによる勝手な縮小を防ぐ */
+    display: block;
+    margin: 0 auto;     /* ← 中央に寄せる（枠より小さい場合に必要） */
+    object-fit: contain; /* ← つぶれ防止（念のため） */
+}
+
+.sand-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%; /* 下半分 */
+    overflow: hidden;
+    z-index: 1;
+    display: flex;
+    align-items: flex-end; 
+    justify-content: center; /* ← 中央寄せを補強 */
+}
+
+.sand-bottom img {
+    width: auto;        /* ← これが最重要！横幅の強制フィットを解除 */
+    height: 200%;       
+    max-width: none;    /* ← ブラウザによる勝手な縮小を防ぐ */
+    display: block;
+    margin: 0 auto;     /* ← 中央に寄せる（枠より小さい場合に必要） */
+    object-fit: contain; /* ← つぶれ防止（念のため） */
+}
+
+
+/* 砂のアニメーション用マスク */
+.mask-top, .mask-bottom {
+    position: absolute;
+    width: 100%;
+    background-color: #008b8b; /* 背景色で隠す */
+    z-index: 5;
+    /* top/bottom は animation内で制御するためここでは指定しない、あるいは初期値を設定 */
+}
+
+/* 上の砂（青）のマスク */
+.mask-top {
+    animation: sand-drop-top 30s linear infinite;
+}
+
+/* 下の砂（赤）のマスク */
+.mask-bottom {
+    animation: sand-fill-bottom 30s linear infinite;
+}
+
+
+/* --- アニメーション定義 (Keyframes) --- */
+
+/* 回転アニメーション */
+@keyframes rotate-hourglass {
+    0%      { transform: rotate(0deg); }
+    33.33%  { transform: rotate(0deg); }   
+    50%     { transform: rotate(180deg); } 
+    83.33%  { transform: rotate(180deg); } 
+    100%    { transform: rotate(360deg); } 
+}
+
+/* 【修正版】上の砂（青）の動き 
+   前半: そのまま落ちる (top基準)
+   後半: 180度回転後、下から溜まる動きになる (bottom基準へ切り替え)
+*/
+@keyframes sand-drop-top {
+    /* --- 前半: 砂が落ちる（通常） --- */
+    /* top:0 で固定し、heightを0→100%にすることで上から隠していく */
+    0%      { top: 0; bottom: auto; height: 0%; }   /* 満タン */
+    33.33%  { top: 0; bottom: auto; height: 100%; } /* 空っぽ */
+    50%     { top: 0; bottom: auto; height: 100%; } /* 回転中維持 */
+
+    /* --- 後半: 逆さまで「溜まる」役割 --- */
+    /* 回転して「視覚的には下」にありますが、DOM内では「上部要素」です。
+       ここを「底（画像のフタ側）から溜める」には、マスクを「くびれ側（bottom）」に固定し、
+       heightを100%→0%に減らすことで、画像のTop（視覚的な底）を露出させます。
+    */
+    50.1%   { top: auto; bottom: 0; height: 100%; } /* 空っぽ（マスク全開） */
+    83.33%  { top: auto; bottom: 0; height: 0%; }   /* 満タン（マスクなし） */
+    100%    { top: auto; bottom: 0; height: 0%; }
+}
+
+/* 【修正版】下の砂（赤）の動き
+   前半: 溜まる (top基準)
+   後半: 180度回転後、上から落ちる動きになる (bottom基準へ切り替え)
+*/
+@keyframes sand-fill-bottom {
+    /* --- 前半: 砂が溜まる（通常） --- */
+    /* top:0 にマスクを固定し、heightを100%→0%にすることで、底（画像のBottom）から見せる */
+    0%      { top: 0; bottom: auto; height: 100%; } /* 空っぽ */
+    33.33%  { top: 0; bottom: auto; height: 0%; }   /* 満タン */
+    50%     { top: 0; bottom: auto; height: 0%; }   /* 回転中維持 */
+
+    /* --- 後半: 逆さまで「落ちる」役割 --- */
+    /*
+       回転して「視覚的には上」にあります。
+       ここを「上（画像のフタ側）から減らす」には、マスクを「フタ側（bottom）」に固定し、
+       heightを0%→100%に増やすことで、画像のBottom（視覚的な上）から隠します。
+    */
+    50.1%   { top: auto; bottom: 0; height: 0%; }   /* 満タン */
+    83.33%  { top: auto; bottom: 0; height: 100%; } /* 空っぽ */
+    100%    { top: auto; bottom: 0; height: 100%; }
+}
+
+/* フェードアウト用クラス */
+.loaded {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.8s ease;
+}
+
+/* ローディングレイヤーが index を覆う設定 */
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #008b8b; /* 砂時計の背景色 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 200001;
+    transition: transform 1.2s ease;
+}
+
+/* ローディング終了時に上へスライド */
+#loader.slide-up {
+    transform: translateY(-100%);
+}
+
+/* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+    スマホ（768px以下）では
+    ヘッダー固定 + 背景維持 + メニューはヘッダー下から全画面
+    内容の先頭がヘッダーに隠れないよう padding 追加
+   ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ */
+@media screen and (max-width: 768px) {
+
+    /* ヘッダーを常に表示して背景を確保 */
+header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 120px;   
+        padding: 0px 20px;            /* ← スマホでの実ヘッダー高さ */
+        z-index: 200000;
+    }
+
+    /* ページ内容がヘッダーの裏に入らないように余白を付ける */
+
+#wrap {
+        padding-top: 120px;  /* ← ヘッダーの高さに合わせて調整 */
+        overflow: visible;
+    }
+
+
+    /* メニュー：ヘッダーの下から全画面表示 */
+.menu {
+        position: fixed;
+        top: 120px;                     /* ← ヘッダーの真下から開始 */
+        left: 0;
+        width: 100vw;
+        height: calc(100vh - 120px);    /* ← 全画面からヘッダーを引く */
+        overflow-y: auto;
+        padding: 20px;
+
+        background-color: rgba(0, 0, 0, 0.35);
+        backdrop-filter: blur(6px);
+
+        z-index: 150000;
+
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: all 0.25s ease;
+    }
+
+.menu.open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    /* メニュー項目の見た目調整 */
+.menu__item {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 18px 10px;
+    }
+}
+
+.colorize {
+    filter: brightness(0) invert(1); 
+    transition: filter 0.3s ease;
+}
+
+.icon-img {
+    filter: brightness(0) invert(1); 
+    transition: filter 0.4s;
+}
+
+.bachelorsecret {
+    display: none !important;
+}
+
+.back1color,.back2color,.back3color,.back4color {
+    padding:20px; 
+    text-align:center;
+    margin-bottom: 20px
+}
+
+.BAN10 {
+    color: #ff007f;
+}
+
+/* 共通：矢印×リング */
+.color-icon .arrow {
+    fill: none;
+    stroke: white;
+    stroke-width: 14;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.color-icon .ring {
+    fill: none;
+    stroke-width: 10;
+}
+
+/* ── ランダム3色指定 ── */
+[data-color="blue"] .ring {
+    stroke: url(#gradBlue);
+}
+[data-color="green"] .ring {
+    stroke: url(#gradGreen);
+}
+[data-color="red"] .ring {
+    stroke: url(#gradRed);
+}
