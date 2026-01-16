@@ -245,7 +245,7 @@ function secretTrigger() {
     tapCount++;
 
     if (tapCount >= 20) {
-        window.location.href = "https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fun.html";
+        window.location.href = "https://fukuillsg2019-ship-it.github.io/fukuillsg2019/fun/";
     }
 
     clearTimeout(tapTimer);
@@ -265,6 +265,7 @@ function setRandomPageTopColor() {
 window.addEventListener("DOMContentLoaded", () => {
     setRandomPageTopColor();
 });
+
 
 
 
