@@ -94,7 +94,9 @@ window.onload = function () {
         }, 150);
 
         setTimeout(() => {
-            window.location.href = "index.html";
+        history.back();
         }, 1100);
+
     });
 };
+
