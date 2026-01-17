@@ -729,4 +729,30 @@ summary::-webkit-details-marker {
   display:none;
 }
 
+/* スマホでフッターの大学ロゴをサイズ変更せず横一列に並べる */
+@media screen and (max-width: 768px) {
+    footer .sns-container {
+        display: flex !important;
+        flex-direction: row !important; /* 横並びを強制 */
+        flex-wrap: nowrap !important;   /* 折り返しを禁止 */
+        justify-content: center !important; /* 中央に寄せる */
+        gap: 20px !important;           /* アイコン同士の間隔（お好みで調整） */
+        width: 100% !important;
+        max-width: none !important;
+        padding: 10px 0 !important;
+    }
+
+    footer .sns-item {
+        width: auto !important;         /* 幅を自動（中身に合わせる）に */
+        min-width: 0 !important;
+        flex: 0 0 auto !important;      /* 伸び縮みさせない */
+        margin: 0 !important;
+    }
+
+    footer .sns-item img {
+        height: 30px !important;        /* 元のサイズ（30px）を維持 */
+        width: auto !important;
+        object-fit: contain;
+    }
+}
 
