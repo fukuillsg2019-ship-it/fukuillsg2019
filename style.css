@@ -729,30 +729,27 @@ summary::-webkit-details-marker {
   display:none;
 }
 
-/* スマホ表示(600px以下)の時、フッターだけ強制的に横並びにする設定 */
-@media (max-width: 600px) {
-    
-    /* フッター内の枠組み：折り返しを禁止し、間隔を狭める */
+/* スマホでフッターの3つを強制的に横一列にする */
+@media screen and (max-width: 768px) {
     footer .sns-container {
         display: flex !important;
-        flex-wrap: nowrap !important; /* 折り返しを強制無効 */
-        gap: 0px !important;          /* アイコン間の隙間を詰める */
+        flex-wrap: nowrap !important; /* 折り返しを絶対にさせない */
+        max-width: 100% !important;   /* 400px制限を解除 */
         width: 100% !important;
-        max-width: 100% !important;
+        justify-content: space-around !important; /* 均等に配置 */
+        gap: 5px !important;          /* アイコン同士の隙間を最小限に */
     }
 
-    /* フッター内の各アイテム：幅の制限をすべて解除 */
     footer .sns-item {
-        width: auto !important;       /* 50%指定を強制解除 */
-        min-width: 0 !important;      /* 「最低80px」の制限を解除（これが原因の可能性大） */
-        flex: 1 1 0 !important;       /* 3つを均等な幅にする */
-        padding: 0 5px !important;    /* 左右に少しだけ余白を持たせる */
+        width: 30% !important;        /* 50%指定を上書きして3分の1以下にする */
+        min-width: 0 !important;      /* 最小幅制限を解除 */
+        margin: 0 !important;
+        flex: 1 !important;
     }
-    
-    /* 中の画像がはみ出さないように調整 */
+
     footer .sns-item img {
-        max-width: 100% !important;
-        height: auto !important;
+        height: 25px !important;      /* スマホで少しだけ小さくして収まりを良くする */
+        width: auto !important;
         object-fit: contain;
     }
 }
