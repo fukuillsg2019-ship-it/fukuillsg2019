@@ -729,27 +729,4 @@ summary::-webkit-details-marker {
   display:none;
 }
 
-/* スマホでフッターの3つを強制的に横一列にする */
-@media screen and (max-width: 768px) {
-    footer .sns-container {
-        display: flex !important;
-        flex-wrap: nowrap !important; /* 折り返しを絶対にさせない */
-        max-width: 100% !important;   /* 400px制限を解除 */
-        width: 100% !important;
-        justify-content: space-around !important; /* 均等に配置 */
-        gap: 5px !important;          /* アイコン同士の隙間を最小限に */
-    }
 
-    footer .sns-item {
-        width: 30% !important;        /* 50%指定を上書きして3分の1以下にする */
-        min-width: 0 !important;      /* 最小幅制限を解除 */
-        margin: 0 !important;
-        flex: 1 !important;
-    }
-
-    footer .sns-item img {
-        height: 25px !important;      /* スマホで少しだけ小さくして収まりを良くする */
-        width: auto !important;
-        object-fit: contain;
-    }
-}
