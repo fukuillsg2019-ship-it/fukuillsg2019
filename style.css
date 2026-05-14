@@ -248,50 +248,44 @@ h1 {
 
 /*
   PC用：
-  BAN/1.pngを切らずに、横幅いっぱいで大きく表示する。
-  height: 100vh + object-fit: cover だと腰から下が切れやすいので、
-  PCでも画像の実寸比率を保ったまま縦に流す。
+  BAN/1.pngを画面いっぱいに大きく表示。
+  object-fit: cover なので、画面比率によって多少の見切れは出るが、
+  「小さくならない」「全画面っぽい」表示になる。
 */
 .photo-overlay-container {
   width: 100%;
-  height: auto;
-  min-height: 0;
+  height: 100vh;
+  min-height: 640px;
   position: relative;
   margin-bottom: 60px;
-  padding-bottom: 28px;
   background-color: #ffffff;
-  overflow: visible;
+  overflow: hidden;
 }
 
 /*
   index.htmlに style="opacity: 0.5" が残っていても、
   画像が透けすぎないように CSS側で上書き。
+  透け感を残したい場合は opacity: 0.85 などに変更してOK。
 */
 .full-width-img {
-  position: relative;
-  inset: auto;
   width: 100%;
-  height: auto;
-  object-fit: unset;
-  object-position: unset;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  object-position: center top;
   display: block;
   opacity: 1 !important;
 }
 
-/*
-  PCでもロゴをBAN画像に重ねない。
-  BAN/1.pngの下に普通に表示するので、腰から先に被らない。
-*/
 .absolute02 {
-  position: relative;
-  top: auto;
-  left: auto;
-  transform: none;
-  display: block;
+  position: absolute;
+  top: 32px;
+  left: 50%;
+  transform: translateX(-50%);
   width: min(520px, 60vw);
   max-width: 60%;
   height: auto;
-  margin: 24px auto 0;
   z-index: 10;
   pointer-events: none;
 }
@@ -851,200 +845,5 @@ summary::-webkit-details-marker {
     height: 30px !important;
     width: auto !important;
     object-fit: contain;
-  }
-}
-
-/* =========================================================
-   v4 修正：PCでBAN/1.pngの腰から先が切れる問題を完全回避
-   ロゴを消した前提なので、absolute02まわりも無効化
-   ========================================================= */
-
-/* ロゴ画像をindex.htmlに残していても表示しない */
-.absolute02,
-#ban {
-  display: none !important;
-}
-
-/* PC・スマホ共通：トップ画像を切らない */
-.photo-overlay-container {
-  width: 100% !important;
-  height: auto !important;
-  min-height: 0 !important;
-  max-height: none !important;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-  margin-bottom: 0 !important;
-  position: relative !important;
-  overflow: visible !important;
-  background-color: #ffffff !important;
-}
-
-/*
-  BAN/1.pngを絶対配置にしない。
-  これで次のピンクのエリアは、画像の全体が終わった後に来る。
-*/
-.photo-overlay-container img.full-width-img,
-.full-width-img,
-.absolute01 {
-  position: relative !important;
-  inset: auto !important;
-  top: auto !important;
-  left: auto !important;
-  transform: none !important;
-
-  display: block !important;
-  width: 100% !important;
-  height: auto !important;
-
-  object-fit: contain !important;
-  object-position: center top !important;
-  opacity: 1 !important;
-}
-
-/* PCでは横幅いっぱい。縦が長ければページをスクロールして全部見せる */
-@media screen and (min-width: 769px) {
-  #wrap {
-    padding-top: 0 !important;
-    overflow: visible !important;
-  }
-
-  .photo-overlay-container {
-    height: auto !important;
-    overflow: visible !important;
-  }
-
-  .photo-overlay-container img.full-width-img,
-  .full-width-img,
-  .absolute01 {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-  }
-}
-
-/* スマホは今の完璧な状態をなるべく維持 */
-@media screen and (max-width: 768px) {
-  #wrap {
-    padding-top: 120px !important;
-    overflow: visible !important;
-  }
-
-  .photo-overlay-container {
-    height: auto !important;
-    overflow: visible !important;
-  }
-
-  .photo-overlay-container img.full-width-img,
-  .full-width-img,
-  .absolute01 {
-    position: relative !important;
-    width: 100% !important;
-    height: auto !important;
-    display: block !important;
-  }
-}
-
-/* =========================================================
-   v5 方針変更：
-   BAN/1.pngをトップ単独画像ではなく、文字エリアの背景として使う
-   - ロゴは非表示
-   - トップのBAN画像枠は非表示
-   - #wrap全体に背景画像としてBAN/1.pngを敷く
-   - 文字が読めるように、各本文ブロックに半透明の白背景を付ける
-   ========================================================= */
-
-/* トップに単独で出していたBAN画像とロゴは消す */
-.photo-overlay-container,
-.absolute02,
-#ban {
-  display: none !important;
-}
-
-/* 本文エリア全体の背景にBAN/1.pngを使用 */
-#wrap {
-  position: relative !important;
-  min-height: 100vh !important;
-  padding-top: 0 !important;
-  overflow: visible !important;
-
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.68), rgba(255, 255, 255, 0.68)),
-    url("BAN/1.png") !important;
-  background-repeat: no-repeat !important;
-  background-position: center top !important;
-  background-size: cover !important;
-  background-attachment: fixed !important;
-}
-
-/* 文字が背景に埋もれないように、本文系の要素に読みやすい背景をつける */
-#wrap h1,
-#wrap h2,
-#wrap h3,
-#wrap p,
-#wrap table,
-#wrap .table-container,
-#wrap .table-scroll-wrapper,
-#wrap .container,
-#wrap details,
-#wrap footer,
-#wrap .back1color,
-#wrap .back2color,
-#wrap .back3color,
-#wrap .back4color {
-  background-color: rgba(255, 255, 255, 0.78) !important;
-  backdrop-filter: blur(2px);
-  border-radius: 14px;
-}
-
-/* 見出し・本文の余白を少し整える */
-#wrap h1,
-#wrap h2,
-#wrap h3,
-#wrap p {
-  width: min(92%, 1000px);
-  margin: 0 auto 20px !important;
-}
-
-/* テーブルも中央寄せで読みやすく */
-#wrap table {
-  margin: 0 auto 24px !important;
-}
-
-/* PCでは背景を画面いっぱいに固定して、スクロールしても背景感を出す */
-@media screen and (min-width: 769px) {
-  #wrap {
-    background-size: cover !important;
-    background-position: center top !important;
-    background-attachment: fixed !important;
-  }
-}
-
-/* スマホでは fixed がカクつくことがあるので scroll にする */
-@media screen and (max-width: 768px) {
-  #wrap {
-    padding-top: 120px !important;
-    background-size: auto 100vh !important;
-    background-position: center top !important;
-    background-attachment: scroll !important;
-  }
-
-  #wrap h1,
-  #wrap h2,
-  #wrap h3,
-  #wrap p,
-  #wrap table,
-  #wrap .table-container,
-  #wrap .table-scroll-wrapper,
-  #wrap .container,
-  #wrap details,
-  #wrap footer,
-  #wrap .back1color,
-  #wrap .back2color,
-  #wrap .back3color,
-  #wrap .back4color {
-    width: min(94%, 720px);
-    margin-left: auto !important;
-    margin-right: auto !important;
-    background-color: rgba(255, 255, 255, 0.84) !important;
   }
 }
