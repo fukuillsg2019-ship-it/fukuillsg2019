@@ -294,16 +294,28 @@ li {
     maskで作ったロゴには普通のtext-strokeが使えないので、
     上下左右と斜め方向に白いdrop-shadowを重ねる。
   */
+  /*
+    視認性強化：
+    1段目：細い白フチ
+    2段目：太めの黒フチ
+    3段目：下方向の影
+  */
   filter:
-    drop-shadow( 2px  0   0 #ffffff)
-    drop-shadow(-2px  0   0 #ffffff)
-    drop-shadow( 0    2px 0 #ffffff)
-    drop-shadow( 0   -2px 0 #ffffff)
-    drop-shadow( 2px  2px 0 #ffffff)
-    drop-shadow(-2px  2px 0 #ffffff)
-    drop-shadow( 2px -2px 0 #ffffff)
-    drop-shadow(-2px -2px 0 #ffffff)
-    drop-shadow(0 8px 16px rgba(0, 0, 0, 0.32));
+    drop-shadow( 1px  0   0 #ffffff)
+    drop-shadow(-1px  0   0 #ffffff)
+    drop-shadow( 0    1px 0 #ffffff)
+    drop-shadow( 0   -1px 0 #ffffff)
+
+    drop-shadow( 3px  0   0 rgba(0, 0, 0, 0.85))
+    drop-shadow(-3px  0   0 rgba(0, 0, 0, 0.85))
+    drop-shadow( 0    3px 0 rgba(0, 0, 0, 0.85))
+    drop-shadow( 0   -3px 0 rgba(0, 0, 0, 0.85))
+    drop-shadow( 3px  3px 0 rgba(0, 0, 0, 0.85))
+    drop-shadow(-3px  3px 0 rgba(0, 0, 0, 0.85))
+    drop-shadow( 3px -3px 0 rgba(0, 0, 0, 0.85))
+    drop-shadow(-3px -3px 0 rgba(0, 0, 0, 0.85))
+
+    drop-shadow(0 10px 18px rgba(0, 0, 0, 0.42));
 
   pointer-events: none;
 }
@@ -637,6 +649,34 @@ summary::-webkit-details-marker {
   transform: translateY(0);
 }
 
+
+
+/* ロゴ後ろに薄い白ぼかし台座を置いて、背景と分離する */
+.photo-overlay-container::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 19;
+  transform: translate(-50%, -50%);
+  width: min(1120px, 88vw);
+  height: min(340px, 29vw);
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 0.48) 0%,
+    rgba(255, 255, 255, 0.30) 42%,
+    rgba(255, 255, 255, 0.00) 72%
+  );
+  pointer-events: none;
+}
+
+@media screen and (max-width: 768px) {
+  .photo-overlay-container::before {
+    width: min(500px, 96vw);
+    height: min(190px, 38vw);
+  }
+}
+
 /* ---------- Responsive ---------- */
 @media screen and (min-width: 769px) {
   .sp-br {
@@ -764,15 +804,21 @@ summary::-webkit-details-marker {
   .photo-overlay-container > .absolute02 {
     width: min(920px, 76vw) !important;
     filter:
-      drop-shadow( 2px  0   0 #ffffff)
-      drop-shadow(-2px  0   0 #ffffff)
-      drop-shadow( 0    2px 0 #ffffff)
-      drop-shadow( 0   -2px 0 #ffffff)
-      drop-shadow( 2px  2px 0 #ffffff)
-      drop-shadow(-2px  2px 0 #ffffff)
-      drop-shadow( 2px -2px 0 #ffffff)
-      drop-shadow(-2px -2px 0 #ffffff)
-      drop-shadow(0 8px 16px rgba(0, 0, 0, 0.32)) !important;
+      drop-shadow( 1px  0   0 #ffffff)
+      drop-shadow(-1px  0   0 #ffffff)
+      drop-shadow( 0    1px 0 #ffffff)
+      drop-shadow( 0   -1px 0 #ffffff)
+
+      drop-shadow( 3px  0   0 rgba(0, 0, 0, 0.85))
+      drop-shadow(-3px  0   0 rgba(0, 0, 0, 0.85))
+      drop-shadow( 0    3px 0 rgba(0, 0, 0, 0.85))
+      drop-shadow( 0   -3px 0 rgba(0, 0, 0, 0.85))
+      drop-shadow( 3px  3px 0 rgba(0, 0, 0, 0.85))
+      drop-shadow(-3px  3px 0 rgba(0, 0, 0, 0.85))
+      drop-shadow( 3px -3px 0 rgba(0, 0, 0, 0.85))
+      drop-shadow(-3px -3px 0 rgba(0, 0, 0, 0.85))
+
+      drop-shadow(0 10px 18px rgba(0, 0, 0, 0.42)) !important;
   }
 
   @media screen and (max-width: 768px) {
@@ -780,5 +826,72 @@ summary::-webkit-details-marker {
     .photo-overlay-container > .absolute02 {
       width: min(470px, 92vw) !important;
     }
+  }
+}
+
+/* =========================================================
+   v6 修正：プレートなしでロゴ視認性を上げる
+   - イラストを隠さないため、白い楕円プレートは使わない
+   - ロゴ本体を少し濃いグラデーションにする
+   - 黒フチを強め、内側に白ハイライトを少し残す
+   ========================================================= */
+
+/* 白いプレート・台座は完全に消す */
+.photo-overlay-container::before {
+  display: none !important;
+}
+
+/* ロゴの色を少し濃くして、背景に負けにくくする */
+.photo-overlay-container::after {
+  background: linear-gradient(
+    90deg,
+    #ff6fd8 0%,
+    #ff9be5 22%,
+    #ffd02f 50%,
+    #d8a0d8 72%,
+    #a45cff 100%
+  ) !important;
+
+  /*
+    プレートなし用の強い輪郭。
+    近い白フチ → 太い黒フチ → 落ち影の順。
+  */
+  filter:
+    drop-shadow( 1px  0   0 rgba(255, 255, 255, 0.95))
+    drop-shadow(-1px  0   0 rgba(255, 255, 255, 0.95))
+    drop-shadow( 0    1px 0 rgba(255, 255, 255, 0.95))
+    drop-shadow( 0   -1px 0 rgba(255, 255, 255, 0.95))
+
+    drop-shadow( 3px  0   0 rgba(0, 0, 0, 0.98))
+    drop-shadow(-3px  0   0 rgba(0, 0, 0, 0.98))
+    drop-shadow( 0    3px 0 rgba(0, 0, 0, 0.98))
+    drop-shadow( 0   -3px 0 rgba(0, 0, 0, 0.98))
+    drop-shadow( 3px  3px 0 rgba(0, 0, 0, 0.98))
+    drop-shadow(-3px  3px 0 rgba(0, 0, 0, 0.98))
+    drop-shadow( 3px -3px 0 rgba(0, 0, 0, 0.98))
+    drop-shadow(-3px -3px 0 rgba(0, 0, 0, 0.98))
+
+    drop-shadow(0 8px 14px rgba(0, 0, 0, 0.50)) !important;
+}
+
+/* スマホでは黒フチを少しだけ細くして潰れを防ぐ */
+@media screen and (max-width: 768px) {
+  .photo-overlay-container::after {
+    filter:
+      drop-shadow( 1px  0   0 rgba(255, 255, 255, 0.95))
+      drop-shadow(-1px  0   0 rgba(255, 255, 255, 0.95))
+      drop-shadow( 0    1px 0 rgba(255, 255, 255, 0.95))
+      drop-shadow( 0   -1px 0 rgba(255, 255, 255, 0.95))
+
+      drop-shadow( 2px  0   0 rgba(0, 0, 0, 0.98))
+      drop-shadow(-2px  0   0 rgba(0, 0, 0, 0.98))
+      drop-shadow( 0    2px 0 rgba(0, 0, 0, 0.98))
+      drop-shadow( 0   -2px 0 rgba(0, 0, 0, 0.98))
+      drop-shadow( 2px  2px 0 rgba(0, 0, 0, 0.98))
+      drop-shadow(-2px  2px 0 rgba(0, 0, 0, 0.98))
+      drop-shadow( 2px -2px 0 rgba(0, 0, 0, 0.98))
+      drop-shadow(-2px -2px 0 rgba(0, 0, 0, 0.98))
+
+      drop-shadow(0 6px 10px rgba(0, 0, 0, 0.48)) !important;
   }
 }
