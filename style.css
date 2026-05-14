@@ -267,8 +267,9 @@ li {
   z-index: 20;
   transform: translate(-50%, -50%);
 
-  width: min(620px, 48vw);
-  height: min(190px, 16vw);
+  /* 3人分の横幅くらいに大きめ表示 */
+  width: min(920px, 76vw);
+  height: min(260px, 22vw);
 
   background: linear-gradient(
     90deg,
@@ -288,10 +289,21 @@ li {
   -webkit-mask-size: contain;
   mask-size: contain;
 
+  /*
+    白フチを作る。
+    maskで作ったロゴには普通のtext-strokeが使えないので、
+    上下左右と斜め方向に白いdrop-shadowを重ねる。
+  */
   filter:
-    drop-shadow(0 2px 0 rgba(255, 255, 255, 0.98))
-    drop-shadow(0 4px 0 rgba(255, 255, 255, 0.82))
-    drop-shadow(0 8px 16px rgba(0, 0, 0, 0.28));
+    drop-shadow( 2px  0   0 #ffffff)
+    drop-shadow(-2px  0   0 #ffffff)
+    drop-shadow( 0    2px 0 #ffffff)
+    drop-shadow( 0   -2px 0 #ffffff)
+    drop-shadow( 2px  2px 0 #ffffff)
+    drop-shadow(-2px  2px 0 #ffffff)
+    drop-shadow( 2px -2px 0 #ffffff)
+    drop-shadow(-2px -2px 0 #ffffff)
+    drop-shadow(0 8px 16px rgba(0, 0, 0, 0.32));
 
   pointer-events: none;
 }
@@ -306,7 +318,7 @@ li {
     top: 50%;
     z-index: 20;
     transform: translate(-50%, -50%);
-    width: min(620px, 48vw);
+    width: min(920px, 76vw);
     height: auto;
     filter:
       drop-shadow(0 2px 0 rgba(255, 255, 255, 0.98))
@@ -655,8 +667,8 @@ summary::-webkit-details-marker {
   }
 
   .photo-overlay-container::after {
-    width: min(330px, 72vw);
-    height: min(120px, 24vw);
+    width: min(430px, 86vw);
+    height: min(150px, 30vw);
   }
 
   .menu {
@@ -742,5 +754,31 @@ summary::-webkit-details-marker {
 
   h1 {
     font-size: 24px;
+  }
+}
+
+
+/* fallback時もロゴを大きめ＋白フチっぽく見せる */
+@supports not ((mask-image: url("")) or (-webkit-mask-image: url(""))) {
+  .photo-overlay-container > #ban,
+  .photo-overlay-container > .absolute02 {
+    width: min(920px, 76vw) !important;
+    filter:
+      drop-shadow( 2px  0   0 #ffffff)
+      drop-shadow(-2px  0   0 #ffffff)
+      drop-shadow( 0    2px 0 #ffffff)
+      drop-shadow( 0   -2px 0 #ffffff)
+      drop-shadow( 2px  2px 0 #ffffff)
+      drop-shadow(-2px  2px 0 #ffffff)
+      drop-shadow( 2px -2px 0 #ffffff)
+      drop-shadow(-2px -2px 0 #ffffff)
+      drop-shadow(0 8px 16px rgba(0, 0, 0, 0.32)) !important;
+  }
+
+  @media screen and (max-width: 768px) {
+    .photo-overlay-container > #ban,
+    .photo-overlay-container > .absolute02 {
+      width: min(430px, 86vw) !important;
+    }
   }
 }
