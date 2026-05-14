@@ -335,10 +335,11 @@ th, td {
 }
 
 .photo-overlay-container {
-    width: 100%;
-    padding-top: 68.04%;
-    position: relative; 
-    margin-bottom: 60px;
+  width: 100%;
+  height: 80vh;
+  position: relative;
+  margin-bottom: 60px;
+  background-color: #ffffff;
 }
 
 .full-width-img {
