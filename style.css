@@ -280,12 +280,14 @@ h1 {
 
 .absolute02 {
   position: absolute;
-  top: 50%;
+  top: 32px;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
+  width: min(520px, 60vw);
   max-width: 60%;
   height: auto;
   z-index: 10;
+  pointer-events: none;
 }
 
 .absolute03 {
@@ -757,6 +759,7 @@ summary::-webkit-details-marker {
     height: auto;
     min-height: 0;
     padding-top: 0;
+    padding-bottom: 24px;
     margin-bottom: 40px;
     overflow: visible;
   }
@@ -771,8 +774,22 @@ summary::-webkit-details-marker {
     display: block;
   }
 
+  /*
+    スマホではロゴを画像の上に重ねない。
+    BAN/1.pngのあとに普通の画像として表示するので、
+    腰〜足にロゴが被らなくなる。
+  */
   .absolute02 {
-    max-width: 75%;
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    display: block;
+    width: 72%;
+    max-width: 320px;
+    height: auto;
+    margin: 18px auto 0;
+    z-index: 10;
   }
 
   .menu {
